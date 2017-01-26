@@ -1,0 +1,61 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+
+
+
+RewriteRule ^index$ index.php [L]
+
+RewriteRule ^index/(.*)$ ^index.php?error=1&%{QUERY_STRING} [R]
+
+
+
+RewriteRule ^home$ home.php [L]
+
+RewriteRule ^issue_or_refund$ issue_or_refund.php [L]
+
+RewriteRule ^payment$ payment.php [L]
+
+RewriteRule ^umrah$ umrah.php [L]
+RewriteRule ^change_password$ change_password.php [L]
+
+
+
+
+
+RewriteRule ^logout$ logout.php [L]
+
+
+
+RewriteRule ^users/(.*)$ users.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^users$ users.php [L]
+
+RewriteRule ^view_users$ view_users.php [L]
+
+
+
+RewriteRule ^air_lines/(.*)$ air_lines.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^air_lines$ air_lines.php [L]
+
+RewriteRule ^view_air_lines$ view_air_lines.php [L]
+
+RewriteRule ^payment_status$ payment_status.php [L]
+
+RewriteRule ^view_ticket_status$ view_ticket_status.php [L]
+
+RewriteRule ^account_statement$ account_statement.php [L]
+
+RewriteRule ^view_visa$ view_visa.php [L]
+
+RewriteRule ^group_request$ group_request.php [L]
+
+RewriteRule ^view_request$ view_request.php [L]
+
+
+
+
+
+
+

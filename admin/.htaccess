@@ -1,0 +1,91 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+
+
+
+RewriteRule ^index$ index.php [L]
+
+RewriteRule ^index/(.*)$ ^index.php?error=1&%{QUERY_STRING} [R]
+
+
+
+RewriteRule home$ home.php [L]
+
+RewriteRule logout$ logout.php [L]
+
+
+
+RewriteRule ^users/email$ users.php?msg=email
+
+RewriteRule ^users/login$ users.php?msg=login
+
+RewriteRule ^users/(.*)$ users.php?id=$1&%{QUERY_STRING} [R]
+
+
+
+
+
+
+
+
+
+RewriteRule ^users$ users.php [L]
+
+RewriteRule ^view_users$ view_users.php [L]
+
+
+
+RewriteRule ^air_lines/(.*)$ air_lines.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^air_lines$ air_lines.php [L]
+
+RewriteRule ^view_air_lines$ view_air_lines.php [L]
+
+
+
+RewriteRule ^logo/(.*)$ logo.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^logo$ logo.php [L]
+
+RewriteRule ^view_logo$ view_logo.php [L]
+
+
+
+RewriteRule ^banner/(.*)$ banner.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^banner$ banner.php [L]
+
+RewriteRule ^view_banner$ view_banner.php [L]
+
+
+
+RewriteRule ^text/(.*)$ text.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^text$ text.php [L]
+
+RewriteRule ^view_text$ view_text.php [L]
+
+
+RewriteRule ^top_banner/(.*)$ top_banner.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^top_banner$ top_banner.php [L]
+
+RewriteRule ^view_top_banner$ view_top_banner.php [L]
+
+
+RewriteRule bank/(.*)$ bank.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^bank$ bank.php [L]
+
+RewriteRule ^view_bank_text$ view_bank_text.php [L]
+
+RewriteRule ^view_ticket$ view_ticket.php [L]
+
+RewriteRule ^view_payment$ view_payment.php [L]
+
+RewriteRule ^view_visa$ view_visa.php [L]
+
+RewriteRule ^view_request$ view_request.php [L]
+
+

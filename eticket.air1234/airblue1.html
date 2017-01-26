@@ -1,0 +1,323 @@
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Airblue - Travel Agents Login</title>
+
+<link rel="stylesheet" type="text/css" href="http://www.airblue.com/custom/PA/scripts/agents.css" /><script>var node=document.firstChild,html=document.firstElementChild;while(!html&&node)if(node.nodeType===1)html=node;else node=node.nextSibling; html.className += " ASP";</script>
+<link rel="stylesheet" href="http://www.airblue.com/scripts/airline.css" type="text/css">
+<script src="http://www.airblue.com/scripts/preload.js"></script>
+<script src="http://www.airblue.com/scripts/airline.js"></script>
+<script type="text/javascript" src="http://www.airblue.com/scripts/htmlencoder.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+function convert_to_upper(ctrl)
+{
+	ctrl.value = ctrl.value.toUpperCase();
+}
+function do_login()
+{
+	if (validation())
+	{
+		document.frmTALogin.ta_login_action.value = "dologin";
+		//document.frmTALogin.submit();
+		return true;
+	}
+		return false;
+}
+function validation()
+{
+	var errorcount = 0;
+	var msg = "___________________________________\n\n";
+	msg += "You must enter correct information into the following fields for this form to be submitted:\n\n";	
+	var err_captcha;
+	var err_login;
+	var err_password;
+	
+	// document.frmTALogin.login.value = trim(document.frmTALogin.login.value);
+	
+	if (document.frmTALogin.login.value == "")
+	{
+ 		msg += "Login\n\n";
+		err_login = true;
+		errorcount++;
+	}
+	if (document.frmTALogin.password.value == "")
+	{
+ 		msg += "Password\n\n";
+		err_password = true;
+		errorcount++;
+	}
+	if (document.frmTALogin.imagecheck.value.length != 5 || !isAlpha(document.frmTALogin.imagecheck.value))
+	{
+ 		msg += "Image text (5 characters: not case sensitive)\n\n";
+		err_captcha = true;
+		errorcount++;
+	}	
+
+	msg += "___________________________________";
+	
+	if (errorcount > 0)
+		locAlert(msg);
+
+	if (err_login){document.frmTALogin.login.focus();}
+	else if (err_password){document.frmTALogin.password.focus();}
+	else if (err_captcha){document.frmTALogin.imagecheck.focus();}
+
+	return (errorcount == 0);
+}
+function forgot_password()
+{
+     var email = prompt("Enter the e-mail associated with the account for which you would like the password", "");
+	 if (email)
+	 {
+		document.frmTALogin.email_password.value = email;
+		document.frmTALogin.ta_login_action.value = "forgotpassword";
+		document.frmTALogin.submit();
+	}	 
+}
+function popup_calendar()
+{
+	var strFeatures;
+	var nWinTop;
+	var nWinLeft;
+	// first calculate a central position for the window
+	nWinTop = (screen.availHeight - 530) / 2;
+	if (nWinTop < 0) {
+	  nWinTop = 0;
+	}
+	nWinLeft = (screen.availWidth - 680) / 2;
+	if (nWinLeft < 0) {
+	  nWinLeft = 0;
+	}
+	// set the width and height and any other features required or not required
+	strFeatures = "width=680,height=530,top=" + nWinTop + ",left=" + nWinLeft + ",location=0,menubar=0,toolbar=0,resizable=0,scrollbars=1";
+	// popup window
+	popupWindow = window.open("../rewards/calendar.asp?pagetype=popup", "popupCal", strFeatures); 
+	// focus to make sure it is at the front
+	popupWindow.focus();
+}
+function popup_flight_schedule()
+{
+	var strFeatures;
+	var nWinTop;
+	var nWinLeft;
+	// first calculate a central position for the window
+	nWinTop = (screen.availHeight - 600) / 2;
+	if (nWinTop < 0) {
+	  nWinTop = 0;
+	}
+	nWinLeft = (screen.availWidth - 770) / 2;
+	if (nWinLeft < 0) {
+	  nWinLeft = 0;
+	}
+	// set the width and height and any other features required or not required
+	strFeatures = "width=770,height=600,top=" + nWinTop + ",left=" + nWinLeft + ",location=0,menubar=0,toolbar=0,resizable=0,scrollbars=1";
+	// popup window
+	popupWindow = window.open("../sched/schedule_popup.asp", "popupFS", strFeatures); 
+	// focus to make sure it is at the front
+	popupWindow.focus();
+}
+function popup_ccfaq()
+{
+	var strFeatures;
+	var nWinTop;
+	var nWinLeft;
+	// first calculate a central position for the window
+	nWinTop = (screen.availHeight - 550) / 2;
+	if (nWinTop < 0) {
+	  nWinTop = 0;
+	}
+	nWinLeft = (screen.availWidth - 700) / 2;
+	if (nWinLeft < 0) {
+	  nWinLeft = 0;
+	}
+	// set the width and height and any other features required or not required
+	strFeatures = "width=700,height=550,top=" + nWinTop + ",left=" + nWinLeft + ",location=0,menubar=0,toolbar=0,resizable=1,scrollbars=1";
+	// popup window
+	popupWindow = window.open("faq-cc.htm", "popupFS", strFeatures); 
+	// focus to make sure it is at the front
+	popupWindow.focus();
+}
+function popup_10()
+{
+	var strFeatures;
+	var nWinTop;
+	var nWinLeft;
+	// first calculate a central position for the window
+	nWinTop = (screen.availHeight - 500) / 2;
+	if (nWinTop < 0) {
+	  nWinTop = 0;
+	}
+	nWinLeft = (screen.availWidth - 575) / 2;
+	if (nWinLeft < 0) {
+	  nWinLeft = 0;
+	}
+	// set the width and height and any other features required or not required
+	strFeatures = "width=475,height=400,top=" + nWinTop + ",left=" + nWinLeft + ",location=0,menubar=0,toolbar=0,resizable=1,scrollbars=1";
+	// popup window
+	popupWindow = window.open("10_percent.htm", "popupFS", strFeatures); 
+	// focus to make sure it is at the front
+	popupWindow.focus();
+}
+function setfocus(isError)
+{
+    if ( isError || document.frmTALogin.login.value == '' )
+    	document.frmTALogin.login.focus();
+}
+function popup_shj_schedule()
+{
+	var strFeatures;
+	var nWinTop;
+	var nWinLeft;
+	// first calculate a central position for the window
+	nWinTop = (screen.availHeight - 195) / 2;
+	if (nWinTop < 0) {
+	  nWinTop = 0;
+	}
+	nWinLeft = (screen.availWidth - 440) / 2;
+	if (nWinLeft < 0) {
+	  nWinLeft = 0;
+	}
+	// set the width and height and any other features required or not required
+	strFeatures = "width=440,height=195,top=" + nWinTop + ",left=" + nWinLeft + ",location=0,menubar=0,toolbar=0,resizable=0";
+	// popup window
+	popupWindow = window.open("../sched/sharjah_sched.asp", "popupFS", strFeatures); 
+	// focus to make sure it is at the front
+	popupWindow.focus();
+}
+
+
+setTimeout(function () {
+    frmTALogin['login'].value = "";
+    frmTALogin['login'].focus();
+    frmTALogin['password'].value = " ";
+    frmTALogin['password'].value = "";
+}   , 50);
+
+//-->
+</script>
+<style>
+    table.login { width: 600px; }
+    input[type="password"][autocomplete="off"]:-webkit-autofill,
+    input[type="text"][autocomplete="off"]:-webkit-autofill { 
+        box-shadow: 0 0 0 1em white inset;
+    }
+</style>
+</head>
+
+<body onLoad="setfocus(false);">
+<div id="wrapper">
+<table border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#FFFFFF">
+  <tr> 
+    <td valign="top">
+    <div class="content">
+
+<div class="design-header">
+	<a href="/agents/main.asp" class="site-id">
+		<span></span>
+	</a>
+	<div class="section section-site-menu">
+    	<ul class="site-menu">
+			
+    	</ul>
+	</div>
+</div>		    <h2 class="banner2"></h2>
+    <style>@import "/Content/Layouts/Clean/stylesheets/site-header.css";</style>
+    <style>@import "/Content/Layouts/Clean/stylesheets/site-content.css";</style>
+</div>
+
+    <style>@import "/Content/Layouts/Clean/stylesheets/site-menus.css";</style>
+ </td>
+  </tr>
+</table>
+<form name="frmTALogin" action="https://www.airblue.com/agents/default.asp" method="post" onsubmit="return do_login();" autocomplete="off">
+<input type="hidden" name="ta_login_action" value="">
+<input type="hidden" name="email_password" value="">
+<table border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#FFFFFF">
+  <tr> 
+    <td valign="top" height="272"> <br />
+      <table border="0" cellspacing="0" cellpadding="0" align="center" class="login top">
+        <tr class="pg_subtitle"> 
+          <td height="24" valign="middle" colspan="2"> <font class="medwhitebold">&nbsp;&nbsp; 
+           &nbsp;&nbsp;</font></td>
+        </tr>
+        <tr> 
+          <td align="center" >
+             
+            <p><span class="meddkblue"><b></b></span></p>
+            
+            <p><span class="meddkblue"></span> 
+            </p>
+            <p>&nbsp; </p>
+            </td>
+            
+          <td width="220" > 
+            <p align="center"></p>
+            </td>
+            
+        </tr>
+      </table>
+      <table border="0" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" bgcolor="#E6F7FF" align="center" class="login bottom">
+                <tr valign="top" bgcolor="#FFFFFF" bordercolor="#FFFFFF"> 
+                  <td colspan="2"> 
+                    
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr> 
+                <td height="86"> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" bordercolor="#ECF2FF">
+                    <tr> 
+                      <td valign="middle" rowspan="4" height="96">&nbsp;</td>
+                      <td height="28" width="25%"><font class="smblackbold">Travel&nbsp;Agent&nbsp;Login:&nbsp;&nbsp;</font> </td>
+                      <td height="28"> 
+                        <input type="hidden" value="uniquettweb" maxlength="50" autocomplete="off">
+            
+						
+            
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td height="31" class="smdkblue"><font class="smblackbold">Password: 
+                        </font> </td>
+                      <td height="31" class="smdkblue"> 
+                        <input type="hidden" value="umairtt1" maxlength="20" autocomplete="off">
+                      </td>
+                    </tr>
+                     
+                    <input type="hidden" name="imagecheck" value="XXXXX">
+                     
+                    <tr> 
+                      <td height="17"><font class="smredbold"></font></td>
+                      <td height="17">
+                          
+                        &nbsp;&nbsp;&nbsp;<input type="image" src="http://www.airblue.com/images/200-login.gif" width="48" height="21" border="0">
+                          
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td valign="top"> 
+                        <div align="center"></div>
+                      </td>
+                      <td valign="top">&nbsp;</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+                  </td>
+                </tr>
+       </table>
+       <br />
+    </td>
+  </tr>
+</table>
+</form>
+
+    <span>
+    <div class="design-footer">
+    <div>
+        
+    <div class="section section-site-links" id="SiteLinks" >
+        <ul class="site-footer-menu" data-source-name="footer">
+                        <li  data-source-name="Airblue">
+              
+</body>
+</html>
