@@ -70,7 +70,7 @@
 
                                         TextField("Pax Name", "pax_name", "", "20","6","form-control required");
 
-										TextField("Sector", "sector", "", "20","6","form-control required");
+										TextField("Air Line Code", "sector", "", "2","6","form-control required");
 
 										?>
 
@@ -80,21 +80,21 @@
 
                                         TextField("PNR", "pnr", "", "20","6","form-control required");
 
-										TextField("Amount", "pin", "", "20","6","form-control required");
+										TextField("Desitnation Code", "air_line_code", "", "3","6","form-control required");
 
 										?>
 
-                                        <div class="clear"></div>
+                                        <div class="clear hide"></div>
 
-                                        <div class="form-group col-lg-6 m-t-10">
+                                        <div class="form-group col-lg-6 m-b-0">
 
                                         <label>Select Air Line</label>
 
-						                  <?php TableComboMsSql("tblairlines", "air_line_name", "air_line_id", "", "air_line_id", "", "", "<option value=''>Select Air Line</option>", "form-control", ""); ?>
+						                  <?php TableComboMsSql("tblairlines", "air_line_name", "air_line_id", "client_id = 0", "air_line_id", "", "", "<option value=''>Select Air Line</option><option value='1'>IATA (BSP)</option>", "form-control", ""); ?>
 
                                           </div>
 
-                                         <div class="form-group col-lg-6 m-b-0 m-t-10">
+                                         <div class="form-group col-lg-6 m-b-0 m-t-0">
 
                                         <label>Mode</label>
 

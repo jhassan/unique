@@ -49,6 +49,7 @@
 										 while($row = mysql_fetch_array($result)) { // ,MYSQL_ASSOC
                                             $payment_status = $row['payment_status'];
                                             $inprocess_selected = "";
+                                            $prossesdehir_selected = "";
                                             $aproved_selected = "";
                                             $rejected_selected = "";
                                             if($payment_status == 1)
@@ -57,9 +58,11 @@
                                                 $payment_status = "Approved";
                                             else if($payment_status == 3)
                                                 $payment_status = "Rejected";
+                                            else if($payment_status == 4)
+                                                $payment_status = "Prossesdehir";
 									?>
                                         <tr class="odd gradeX" id="<?php echo $row['id'];?>">
-                                            <td class="left"><?php echo $row['amount'];?></td>
+                                            <td class="left text-right"><?php echo number_format($row['amount'],2);?></td>
                                             <td class="left" id="Trans_<?php echo $row['id'];?>"><?php echo $row['transection_id'];?></td>
                                             <td class="left"><?php echo $row['pin'];?></td>
                                             <td class="left"><?php echo $arrBank[$row['bank_id'] - 1];?></td>
@@ -119,7 +122,8 @@
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
-                responsive: true
+                responsive: true,
+                "order": [[ 0, "desc" ]]
         });
 		// Get Delete Record ID
 		jQuery(document).on('click','.clsDelete',function(e){

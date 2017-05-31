@@ -37,9 +37,9 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
+
 										<div class="form-group m-10">
-                                            <textarea disabled style="background-color:#FFF; height:250px;" class="form-control col-lg-6" name="bank_text" rows="7" cols=""><?php echo $bank_text;?>
-</textarea>
+                                            <?php echo html_entity_decode($bank_text);?>
 											
                                         </div>
                                         <div class="clear"></div>                                </div>

@@ -84,7 +84,7 @@
 
                         <div class="panel-heading">
 
-                            Umrah
+                            Passport Feeding
 
                         </div>
 
@@ -171,7 +171,7 @@
                                             <div class="clear m-t-10"></div> 
                                             <div class="form-group m-r-15 m-t-10 col-lg-6">
 
-                                            <label>Upload Passport</label>
+                                            <label>Upload Passport (Only JPG, JPEG, PNG & GIF files are allowed.)</label>
 
                                             <input type="file" name="fileToUpload[]" class="required">
 

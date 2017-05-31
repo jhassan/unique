@@ -40,6 +40,7 @@
                                             <th>User Name</th>
                                             <th>Date</th>
                                             <th>Ticket Status</th>
+                                            <th class="hide">View Comment</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -59,6 +60,20 @@
                                                 $ticket_status = "Void";
                                             else if($ticket_status == 4)
                                                 $ticket_status = "Refund";
+                                            else if($ticket_status == 5)
+                                                $ticket_status = "PNR Expired";
+                                            else if($ticket_status == 6)
+                                                $ticket_status = "Reissued";
+                                            else if($ticket_status == 7)
+                                                $ticket_status = "Rejected";
+                                            else if($ticket_status == 8)
+                                                $ticket_status = "Link Down";
+                                            else if($ticket_status == 9)
+                                                $ticket_status = "In Prossess";
+                                            else if($ticket_status == 10)
+                                                $ticket_status = "Limit Exceeded";
+                                            else if($ticket_status == 11)
+                                                $ticket_status = "Flight Check-in";
 									?>
                                         <tr class="odd gradeX" id="DelID_<?php echo $row['id'];?>">
                                             <td class="left"><?php echo $row['pax_name'];?></td>
@@ -70,6 +85,7 @@
                                             <td class="left"><?php echo UserName($row['user_id']);?></td>
                                             <td class="left"><?php echo date("d-m-Y h:m:i A", strtotime($row['date']));?></td>
                                             <td class="left" style="padding-top: 0;padding-bottom: 0;"><?php echo $ticket_status; ?></td>
+                                            <td class="left hide"><a href="" id="<?php echo $row['id'];?>" data-toggle="modal" data-target=".bs-example-modal-lg4" class="add_new_comments">View Comment</a></td>
                                         </tr>
 									<?php } ?>	
                                         
@@ -111,6 +127,27 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
+    <div class="modal fade bs-example-modal-lg4" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">View Comment</h4>
+      </div>
+      <div class="modal-body" align="center" style="padding: 0px;">
+        <form role="form" onsubmit="return false;" action="action.php" method="post">
+        <input type="hidden" name="action" id="action" value="UploadVisaDocs" />
+        <input type="hidden" name="comment_id" id="comment_id" value="" />
+        <div class="form-group m-r-15 m-t-10 col-lg-6">
+            <textarea disabled="disabled" cols="80" rows="10" name="text_comments" id="text_comments"></textarea>
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
    <input type="hidden" id="currentID" value="" />
     <?php include_once('jquery.php');?>
     
@@ -119,13 +156,38 @@
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
-                responsive: true
+                responsive: true,
+                "order": [[ 0, "desc" ]]
         });
 		// Get Delete Record ID
 		jQuery(document).on('click','.clsDelete',function(e){
 			var DelID = jQuery(this).attr("id");
 			$("#currentID").val(DelID);
 		});	
+
+        //Show dialog upload visa docs
+        $(".add_new_comments").on('click', function(){
+            var current_id = $(this).attr('id');
+            $("#comment_id").val(current_id);
+            var form_data = new FormData();                  
+            form_data.append('comment_id', $("#comment_id").val());
+            $.ajax({
+                        url: 'action.php?action=GetTicketComments', // point to server-side PHP script 
+                        dataType: 'text',  // what to expect back from the PHP script, if anything
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        data: form_data,                         
+                        type: 'post',
+                        success: function(response){
+                            //console.log(response); return false;
+                            $("#text_comments").html('');
+                            $("#text_comments").html(response);
+                            //console.log(response); return false;
+                            //window.location.href = 'view_ticket';
+                        }
+             });
+            });
 		
 		// Update payment status
         jQuery(document).on('change','.get_payment_status',function(e){

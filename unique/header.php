@@ -14,11 +14,13 @@
 		{
 		while($row21 = mysql_fetch_array($result21)) { // ,MYSQL_ASSOC
 
-			$str21 .= '["../admin/images/top_banners/'.$row21['banner_image'].'"],';
+			$str21 .= '["../utt-staff/images/top_banners/'.$row21['banner_image'].'"],';
 
 		}
 		}
 		$banner21 = rtrim($str21,",");
+
+        //print_r($_SESSION);
 
 ?>
 
@@ -37,20 +39,19 @@
                 </button>
 				<?php if(!empty($Image)) {?>
                 <div class="pull-left col-lg-4">
-                <a class="navbar-brand" href="home"><img src="../admin/images/logo/<?php echo $Image;?>" height="80" 
+                <a class="navbar-brand" href="home"><img src="../utt-staff/images/logo/<?php echo $Image;?>" height="80" 
                 width="300" alt="Logo"></a>
                 </div>
                 <?php } ?>
                 <div class="pull-left col-lg-2">&nbsp;</div>
                 <div class="pull-left col-lg-6" id="imageslideshow3"></div>
-
+                
             </div>
 
             <!-- /.navbar-header -->
 
 			<div class="clear"></div>
-
-            <ul class="nav navbar-top-links navbar-right">
+            <ul class="nav navbar-top-links navbar-right hide">
 
                 
 
@@ -129,4 +130,7 @@
  </script>
  <style type="text/css">
  #imageslideshow3 .gallerylayer { background: #f8f8f8 !important;}
+ body {
+  text-transform: uppercase !important;
+  }
  </style>

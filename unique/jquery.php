@@ -25,7 +25,7 @@
 		var dateToday = new Date(); 
     	$( ".date_picker" ).datepicker({ dateFormat: 'yy-mm-dd', minDate: dateToday }).datepicker("setDate",new Date());
 		$( ".date_picker_pre" ).datepicker({ dateFormat: 'yy-mm-dd', maxDate: '0' }).datepicker("setDate",new Date()); 
-
+		$( ".date_picker_pre2" ).datepicker({ dateFormat: 'yy-mm-dd', maxDate: '0' }); 
 		// Numeric only control handler
 		$.fn.ForceNumericOnly =
 		function()

@@ -22,7 +22,7 @@
 
 
 
-    <title>Unique Travels</title>
+    <title>Tours View</title>
 
 
 
@@ -90,6 +90,10 @@
 
 	.p-l-0 { padding-left: 0px !important;}
 
+    .p-l-5 { padding-left: 5px !important;}
+
+    .p-l-10 { padding-left: 10px !important;}
+
 	/*.txt-box { width: 91px !important; padding:0px !important;}*/
 
 	.dir-right{ direction:rtl;}
@@ -114,9 +118,12 @@
 	
 	#page-wrapper { min-height: 0px !important;}
 
+    .bld{font-weight: bold !important;}
+
     </style>
 
 
 
 </head>
 
+<?php include_once("../utt-staff/log_array.php"); ?>

@@ -1,0 +1,109 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+
+RewriteRule ^index$ index.php [L]
+
+RewriteRule ^index/(.*)$ ^index.php?error=1&%{QUERY_STRING} [R]
+
+RewriteRule home$ home.php [L]
+
+RewriteRule logout$ logout.php [L]
+
+RewriteRule ^users/email$ users.php?msg=email
+
+RewriteRule ^users/login$ users.php?msg=login
+
+RewriteRule ^users/(.*)$ users.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^account_statement$ account_statement.php [L]
+
+RewriteRule ^personal_info$ personal_info.php [L]
+
+RewriteRule ^un_read_ticket$ un_read_ticket.php [L]
+
+RewriteRule ^un_read_payment$ un_read_payment.php [L]
+
+RewriteRule ^change_password$ change_password.php [L]
+
+RewriteRule ^payment_rcv$ payment_rcv.php [L]
+
+RewriteRule ^issued_reissued_tkt$ issued_reissued_tkt.php [L]
+
+RewriteRule ^refund_void_tkt$ refund_void_tkt.php [L]
+
+RewriteRule ^users$ users.php [L]
+
+RewriteRule ^view_users$ view_users.php [L]
+
+RewriteRule ^air_lines/(.*)$ air_lines.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^air_lines$ air_lines.php [L]
+
+RewriteRule ^view_air_lines$ view_air_lines.php [L]
+
+RewriteRule ^logo/(.*)$ logo.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^logo$ logo.php [L]
+
+RewriteRule ^view_logo$ view_logo.php [L]
+
+RewriteRule ^banner/(.*)$ banner.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^banner$ banner.php [L]
+
+RewriteRule ^view_banner$ view_banner.php [L]
+
+RewriteRule ^text/(.*)$ text.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^text$ text.php [L]
+
+RewriteRule ^view_text$ view_text.php [L]
+
+RewriteRule ^vendor$ vendor.php [L]
+
+RewriteRule ^view_vendor$ view_vendor.php [L]
+
+RewriteRule ^top_banner/(.*)$ top_banner.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^top_banner$ top_banner.php [L]
+
+RewriteRule ^view_top_banner$ view_top_banner.php [L]
+
+RewriteRule bank/(.*)$ bank.php?id=$1&%{QUERY_STRING} [R]
+
+RewriteRule ^bank$ bank.php [L]
+
+RewriteRule ^view_bank_text$ view_bank_text.php [L]
+
+RewriteRule ^view_ticket$ view_ticket.php [L]
+
+RewriteRule ^view_payment$ view_payment.php [L]
+
+RewriteRule ^view_visa$ view_visa.php [L]
+
+RewriteRule ^view_request$ view_request.php [L]
+
+RewriteRule ^add_post$ add_post.php [L]
+
+RewriteRule ^view_post$ view_post.php [L]
+
+RewriteRule ^issue_or_refund$ issue_or_refund.php [L]
+
+RewriteRule ^payment$ payment.php [L]
+
+RewriteRule ^others$ others.php [L]
+
+RewriteRule ^view_others$ view_others.php [L]
+
+RewriteRule ^view_log$ view_log.php [L]
+
+RewriteRule ^daily_sale$ daily_sale.php [L]
+
+RewriteRule ^daily_payment$ daily_payment.php [L]
+
+
+
+
+
+

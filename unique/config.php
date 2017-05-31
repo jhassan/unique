@@ -43,13 +43,13 @@
 	$arrBank[] = "Cash";
 	// Issue Type
 
-	$arrIssue[] = "issue";
+	$arrIssue[] = "Issue";
 
-	$arrIssue[] = "refund";
+	$arrIssue[] = "Refund";
 
-	$arrIssue[] = "reissue";
+	$arrIssue[] = "Reissue";
 
-	$arrIssue[] = "split";
+	$arrIssue[] = "Void";
 	// Relation
 
 	$arrRelation[] = "Mother";

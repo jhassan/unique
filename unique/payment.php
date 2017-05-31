@@ -90,7 +90,7 @@
 
                                         <?php
 
-                                        TextField("Amount", "Amount", "", "20","6","form-control required");
+                                        TextField("Amount", "Amount", "", "20","6","form-control required number_only");
 
 										TextField("TransductionID", "transection_id", "", "10","6","form-control required");
 
@@ -102,7 +102,7 @@
 
 										<?php
 
-                                        TextField("PIN", "pin", "", "20","6","form-control required");
+                                        //TextField("PIN", "pin", "", "20","6","form-control required");
 
 										//ArrayComboBox("Select Bank", "", $arrContactPersonType, true, "", "---Select Bank---", "required");
 
@@ -119,7 +119,7 @@
                                         <div class="clear"></div>
                                         <div class="form-group m-r-15 m-t-10 col-lg-6">
 
-                                            <label>Upload Bank Slip</label>
+                                            <label>Upload Bank Slip (Only JPG, JPEG, PNG & GIF files are allowed.)</label>
 
                                             <input type="file" name="fileToUpload" id="fileToUpload" class="required">
 

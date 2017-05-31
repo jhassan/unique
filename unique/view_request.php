@@ -56,6 +56,8 @@
                                                 $request_status = "Approved";
                                             else if($request_status == 3)
                                                 $request_status = "Rejected";
+                                            else if($request_status == 4)
+                                                $request_status = "Prossesdehir";
                                             if($one_way_or_return == 0)
                                                 $way = "With Return";
                                             else if($one_way_or_return == 1)
@@ -65,6 +67,11 @@
                                             else {
                                                 $date_of_deparcher = date("d/m/Y",strtotime($row['date_of_deparcher']));
                                             }
+                                            if($row['date_of_return'] == "0000-00-00")
+                                                $date_of_return = "0000-00-00";
+                                            else {
+                                                $date_of_return = date("d/m/Y",strtotime($row['date_of_return']));
+                                            }
 									?>
                                         <tr class="odd gradeX">
                                             <td class="left"><?php echo $row['no_of_pax'];?></td>
@@ -72,7 +79,7 @@
                                             <td class="left" id="Trans_<?php echo $row['id'];?>"><?php echo $row['preferd_airline'];?></td>
                                             <td class="left"><?php echo $way;?></td>
                                             <td class="left"><?php echo $date_of_deparcher ;?></td>
-                                            <td class="left"><?php echo date("d/m/Y",strtotime($row['date_of_return']));?></td>
+                                            <td class="left"><?php echo $date_of_return;?></td>
                                             <td class="left" style="padding-top: 0;padding-bottom: 0;"><?php echo $request_status; ?></td>
                                             <td class="left"><a href="" id="<?php echo $row['id'];?>" data-toggle="modal" data-target=".bs-example-modal-lg5" class="show_comments">View</a></td>
                                         </tr>

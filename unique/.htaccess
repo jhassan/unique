@@ -12,6 +12,10 @@ RewriteRule ^index/(.*)$ ^index.php?error=1&%{QUERY_STRING} [R]
 
 RewriteRule ^home$ home.php [L]
 
+RewriteRule ^about$ about.php [L]
+RewriteRule ^contact$ contact.php [L]
+RewriteRule ^services$ services.php [L]
+
 RewriteRule ^issue_or_refund$ issue_or_refund.php [L]
 
 RewriteRule ^payment$ payment.php [L]
@@ -19,7 +23,13 @@ RewriteRule ^payment$ payment.php [L]
 RewriteRule ^umrah$ umrah.php [L]
 RewriteRule ^change_password$ change_password.php [L]
 
+RewriteRule ^company_history$ company_history.php [L]
 
+RewriteRule ^ceo_message$ ceo_message.php [L]
+
+RewriteRule ^our_mission$ our_mission.php [L]
+
+RewriteRule ^why_us$ why_us.php [L]
 
 
 
@@ -52,6 +62,37 @@ RewriteRule ^view_visa$ view_visa.php [L]
 RewriteRule ^group_request$ group_request.php [L]
 
 RewriteRule ^view_request$ view_request.php [L]
+
+RewriteRule ^notifications$ notifications.php [L]
+
+RewriteRule ^personal_info$ personal_info.php [L]
+
+RewriteRule ^feedback$ feedback.php [L]
+
+RewriteRule ^flights$ flights.php [L]
+
+RewriteRule ^payment_rcv$ payment_rcv.php [L]
+RewriteRule ^issued_reissued_tkt$ issued_reissued_tkt.php [L]
+RewriteRule ^refund_void_tkt$ refund_void_tkt.php [L]
+RewriteRule ^our_team$ our_team.php [L]
+RewriteRule ^others$ others.php [L]
+RewriteRule ^other_url$ other_url.php [L]
+
+RewriteRule ^gallery$ gallery.php [L]
+RewriteRule ^franchise$ franchise.php [L]
+RewriteRule ^franchise_id$ franchise_id.php [L]
+RewriteRule ^login_form$ login_form.php [L]
+RewriteRule ^contacts$ contacts.php [L]
+RewriteRule ^contacts/(.*)$ contacts.php?msg=$1 [L]
+RewriteRule ^login_form/(.*)$ login_form.php?error=$1 [L]
+RewriteRule ^apply_online$ apply_online.php [L]
+
+
+
+
+
+
+
 
 
 

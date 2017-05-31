@@ -14,24 +14,7 @@
 
         </nav>
 
-<style type="text/css">
 
-marquee p
-
-{
-
-    white-space:nowrap;
-
-	float: left;
-
-	padding-left: 200px;
-
-}
-.red { color:#F00; }
-.blue{ color:#00C;}
-.black{ color:#000;}
-.bld{ font-weight: bold;}
-</style>
 
         <div id="page-wrapper" class="p-l-0">
 
@@ -39,34 +22,7 @@ marquee p
 
                 <div class="col-lg-12" style="position:fixed;">
 
-                    <marquee style="background: #f8f8f8; padding-top:15px; width:1078px; padding-bottom:2px;" class="p-20" behavior="scroll" direction="left">
-
-                    <?php 
-
-						$SQLText = "SELECT * FROM tbltext WHERE text_status = 1 ORDER BY text_id DESC";			
-
-							 $resultText = MySQLQuery($SQLText);
-							 if(count($resultText) > 0)
-							 {
-							 while($rowText = mysql_fetch_array($resultText)) { // ,MYSQL_ASSOC
-							 $color = $rowText['text_color'];
-							 $bold = $rowText['text_bold'];
-							 if($color == 1)
-							 	$classColor = "black";
-							 else if($color == 2)
-							 	$classColor = "blue";
-							 else if($color == 3)
-							 	$classColor = "red";		
-							if($bold == 1)
-								$classBold = "bld";	
-
-					?>
-
-                    <p class="<?php echo $classColor;?> <?php echo $classBold;?>"><?php echo $rowText['marque_text']; ?></p>
-
-                     <?php } }?>
-
-                    </marquee>
+                    
 
 					<div id="imageslideshow1" style="margin-top:-2px;"></div>
 

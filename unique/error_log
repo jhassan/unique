@@ -1,0 +1,65 @@
+[16-Feb-2017 10:42:34 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 8
+[16-Feb-2017 10:43:26 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 8
+[16-Feb-2017 10:45:33 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 8
+[16-Feb-2017 10:45:36 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 8
+[16-Feb-2017 10:46:31 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 8
+[16-Feb-2017 10:47:23 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 8
+[16-Feb-2017 10:47:25 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 8
+[16-Feb-2017 10:49:05 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 8
+[16-Feb-2017 10:50:11 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 8
+[16-Feb-2017 10:50:17 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 8
+[16-Feb-2017 10:50:27 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 8
+[16-Feb-2017 10:51:12 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 15
+[16-Feb-2017 10:51:28 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 15
+[16-Feb-2017 10:51:44 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 15
+[16-Feb-2017 10:51:46 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/index.php on line 15
+[16-Feb-2017 10:56:54 UTC] PHP Warning:  mysql_pconnect(): Access denied for user 'toursvie_unique2'@'localhost' (using password: YES) in /home/toursview2017/public_html/unique/functions.php on line 12
+[16-Feb-2017 10:56:54 UTC] PHP Warning:  mysql_db_query(): Access denied for user ''@'localhost' (using password: NO) in /home/toursview2017/public_html/unique/functions.php on line 24
+[16-Feb-2017 10:56:54 UTC] PHP Warning:  mysql_db_query(): A link to the server could not be established in /home/toursview2017/public_html/unique/functions.php on line 24
+[16-Feb-2017 10:56:54 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/toursview2017/public_html/unique/functions.php on line 201
+[16-Feb-2017 10:56:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/toursview2017/public_html/unique/functions.php:12) in /home/toursview2017/public_html/unique/functions.php on line 1180
+[23-Feb-2017 06:15:50 UTC] PHP Warning:  mysql_pconnect(): Link to server lost, unable to reconnect in /home/toursview2017/public_html/unique/functions.php on line 12
+[23-Feb-2017 06:15:50 UTC] PHP Warning:  mysql_db_query(): No such file or directory in /home/toursview2017/public_html/unique/functions.php on line 24
+[23-Feb-2017 06:15:50 UTC] PHP Warning:  mysql_db_query(): A link to the server could not be established in /home/toursview2017/public_html/unique/functions.php on line 24
+[23-Feb-2017 06:15:50 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/toursview2017/public_html/unique/functions.php on line 201
+[23-Feb-2017 06:15:50 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/toursview2017/public_html/unique/functions.php:12) in /home/toursview2017/public_html/unique/functions.php on line 1180
+[23-Feb-2017 06:16:05 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): No such file or directory in /home/toursview2017/public_html/unique/index.php on line 15
+[27-Feb-2017 16:22:13 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/toursview2017/public_html/unique/conn.php on line 6
+[09-Apr-2017 07:47:41 UTC] PHP Fatal error:  Call to undefined function GetRecord() in /home/toursview2017/public_html/unique/header.php on line 3
+[09-Apr-2017 07:48:43 UTC] PHP Fatal error:  Call to undefined function GetRecord() in /home/toursview2017/public_html/unique/header.php on line 3
+[09-Apr-2017 07:49:23 UTC] PHP Fatal error:  Call to undefined function GetRecord() in /home/toursview2017/public_html/unique/header.php on line 3
+[09-Apr-2017 13:19:24 UTC] PHP Fatal error:  Call to undefined function MySQLQuery() in /home/toursview2017/public_html/unique/index.php on line 76
+[09-Apr-2017 13:19:44 UTC] PHP Fatal error:  Call to undefined function MySQLQuery() in /home/toursview2017/public_html/unique/index.php on line 76
+[09-Apr-2017 13:19:54 UTC] PHP Fatal error:  Call to undefined function MySQLQuery() in /home/toursview2017/public_html/unique/index.php on line 76
+[09-Apr-2017 13:20:12 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, object given in /home/toursview2017/public_html/unique/index.php on line 79
+[09-Apr-2017 13:20:15 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, object given in /home/toursview2017/public_html/unique/index.php on line 79
+[10-Apr-2017 09:17:44 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/toursview2017/public_html/unique/account_statement.php on line 64
+[17-Apr-2017 15:01:42 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 04:53:38 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 04:54:36 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 04:54:53 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 04:56:01 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 04:57:08 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 05:05:40 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 05:06:25 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 05:07:53 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 05:08:27 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 05:08:27 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 05:09:46 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 05:11:25 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 05:15:23 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 06:04:45 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 06:18:00 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 06:18:39 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 06:39:21 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 07:03:42 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 07:08:22 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 07:22:59 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 07:26:19 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 07:35:17 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 07:35:45 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 07:39:32 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 07:44:03 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 07:47:07 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 07:54:39 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7
+[18-Apr-2017 08:00:02 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/toursview2017/public_html/unique/bsp.php on line 7

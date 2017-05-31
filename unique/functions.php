@@ -3,7 +3,7 @@
 	ini_set("register_globals", 1);
 	session_start();
 	include_once('config.php');
-
+	date_default_timezone_set('Asia/Karachi');
 	// open a connection with MySQL server
 	// display an error message if connection
 	// was not properly openned
@@ -1044,21 +1044,6 @@
 	
 	}
 
-
-	function getValOfTable($strTableName, $strField, $strWhere)
-	{
-		if(!empty($strWhere))
-			$strQuery  = "SELECT $strField AS nCnt FROM $strTableName WHERE $strWhere";
-		else
-			$strQuery  = "SELECT $strField AS nCnt FROM $strTableName";
-
-		$nResult = MySQLQuery($strQuery);
-		$rstRow = mysql_fetch_array($nResult);		
-		return $rstRow["nCnt"];
-	}
-	
-
-
 	// Function to create combo based on tblConfiguration
 	//
 	// strProperty				Key value to make comob of
@@ -1116,41 +1101,6 @@
 		return -1;
 	}
 
-	
-	// return date difference in year, months and days
-	function DateDifference($date1, $date2)
-	{
-		$diff = abs(strtotime($date2) - strtotime($date1));
-		
-		$years = floor($diff / (365*60*60*24));
-		$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-		$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-		
-		return "$years years, $months months, $days days";
-	}
-	
-	function PatientInfo($rstRow)
-	{
-		global $arrNationality, $nAppId;
-	
-		$strGender = $rstRow["pat_gender"] == 1 ? "Male" : "Female";
-		
-		echo "<table>";
-		echo "<td colspan=2><b>Personal Information</b><br/><hr/></td>";
-		ReadOnlyField("MR Number", "strMrNumber", $rstRow["pat_mr_number"], 16, 16, 0);
-		ReadOnlyField("Patient Name", "strName", $rstRow["pat_name"], 32, 32, 0);
-		ReadOnlyField("Nationality", "strName", $arrNationality[$rstRow["pat_nationality_id"]-1], 32, 32, 0);
-		ReadOnlyField("Date of birth", "strName", date("d-M-Y", strtotime($rstRow["pat_dob"])), 32, 32, 0);
-		ReadOnlyField("Age", "strName", DateDifference(date("d-M-Y"), $rstRow["pat_dob"]), 32, 32, 0);
-		ReadOnlyField("Gender", "strName", $strGender, 32, 32, 0);
-		
-		echo "<tr><td></td><form action='edit_patient.php'>";
-		HiddenField("nPatientId", $rstRow["pat_id"]);
-		if(!empty($nAppId)) HiddenField("nAppId", $nAppId);
-		echo "<td><input type=submit value='Edit Patient'></td></form></tr>";
-		echo "</table>";
-	}
-	
 	/*
 		Remove comma in a number
 	
@@ -1158,68 +1108,11 @@
 	
 	function RemoveComma($No)
 	{
+		$No = str_replace(",","",$No);
 		return str_replace(",","",$No);
 	}
 	
-	function IndexTo24Time($nIndex)
-	{
-		global $arrTime;
-		
-		$t = strtotime("1970-01-01 " . $arrTime[$nIndex-1]);
-		return date("H:i:s", $t);
-	}
-	
-	function Time24HrtoIndex($strTime)
-	{
-		$t = strtotime("1970-01-01 " . $strTime);
-		return ($t - 7200) / 900;
-	}
-	
-	/*
-		the function draws HTML table with border
-	*/
-	function SetStart($strLabel, $strColor, $nWidth)
-	{
-		if(!empty($nWidth))
-			$strWidth = "width=$nWidth";
-		else
-			$strWidth = "";
-	
-		echo "<table $strWidth cellspacing=0 cellpadding=0 border=0>";
-		echo "	<tr>";
-		echo "		<td bgcolor=$strColor align=center colspan=3>";
-		echo "			<img src=images/1.gif height=3><br>";
-		echo "			<b>$strLabel</b><br>";
-		echo "			<img src=images/1.gif height=3><br>";
-		echo "		</td>";
-		echo "	</tr>";
-		echo "	<tr>";
-		echo "		<td bgcolor=$strColor><img src=" . $strAppURL . "/images/1.gif width=1></td>";
-		echo "		<td width=100%>";
-		echo "			<div id=myid123><table width=100% cellpadding=3 cellspacing=0 border=0><tr><td>";
-	}
-	
-	function SetEnd($strColor)
-	{
-		echo "			</td></tr></table></div>";
-		echo "		</td>";
-		echo "		<td bgcolor=$strColor><img src=" . $strAppURL . "/images/1.gif width=1 height=1><br></td>";
-		echo "	</tr>";
-		echo "	<tr>";
-		echo "		<td bgcolor=$strColor align=center colspan=3>";
-		echo "			<img src=" . $strAppURL . "/images/1.gif width=1 height=1><br>";
-		echo "		</td>";
-		echo "	</tr>";		
-		echo "</table>";
-	}
-	
-	function Heading($strLabel)
-	{
-		global $strAppURL;
-		echo "<span style='font-size: 12pt; font-weight: bold; color: black;font-family:Arial, Helvetica, sans-serif;'>$strLabel</span><br><img src=" . $strAppURL . "/images/1.gif height=5><br><img src=" . $strAppURL . "/images/blue-horz-line.jpg><br/><br/>";
-	}
 
-	
 	// Get air line names
 	function AirLinesCode($airLineID)
 	{
@@ -1233,6 +1126,40 @@
 			$Code .= $rstRow["air_line_code"].",";
 		}
 			return rtrim($Code,",");
+	}
+
+	function getUserIP()
+	{
+	    $client  = @$_SERVER['HTTP_CLIENT_IP'];
+	    $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
+	    $remote  = $_SERVER['REMOTE_ADDR'];
+
+	    if(filter_var($client, FILTER_VALIDATE_IP))
+	    {
+	        $ip = $client;
+	    }
+	    elseif(filter_var($forward, FILTER_VALIDATE_IP))
+	    {
+	        $ip = $forward;
+	    }
+	    else
+	    {
+	        $ip = $remote;
+	    }
+
+	    return $ip;
+	}
+
+	// Create User Activity Log
+	function activity_log($user_id, $activity_type, $status_id = "", $descriptions = "")
+	{
+		global $conn;
+		$user_ip = getUserIP();
+		$date_time = date("Y-m-d H:i:s");
+		$strQuery = "INSERT INTO tbllog (user_id, computer_name , activity_type, status_id, date_time, descriptions)
+				VALUES ('".(int)$user_id."', '".$user_ip."', '".$activity_type."', '".(int)$status_id."' ,'".$date_time."' ,'".$descriptions."')";
+				//echo $sql_log; die;
+		MySQLQuery($strQuery);	
 	}
 	
 	// Send Email
@@ -1278,13 +1205,13 @@
 	if(($_SERVER["SCRIPT_NAME"] != $strLoginScriptPath) && (PHP_SAPI != "cli"))
 	{
 		// echo $_SERVER["SCRIPT_NAME"]."==========".$strLoginScriptPath; die;
-		$strWhere = "user_login = '" . $_SESSION["strLogin"] . "' and user_password = '" . $_SESSION["strPassword"] . "' and user_status = 1";
+		$strWhere = "user_login = '" . $_SESSION["strLogin"] . "' and user_password = '" . $_SESSION["strPassword"] . "' and (user_status = 1 OR user_status = 3)";
 		$rstRow = GetRecord("tbluser", $strWhere);
 		//var_dump($rstRow["user_id"]); die;
 		// if we have not found this user
 		if(empty($rstRow["user_id"]))
 		{
-			header("Location: index?error=1");
+			header("Location: login_form?error=1");
 			exit;
 		}
 		else
@@ -1295,7 +1222,16 @@
 			$_SESSION["strUserName"] = $rstRow["user_name"];
 			$_SESSION["strUserAdmin"] = $rstRow["user_admin"];
 			$_SESSION["nEnableDisable"] = $rstRow["user_disabled"];
-		
+			$_SESSION["franchize_user_permissions"] = $rstRow["franchize_user_permissions"];
+			$_SESSION["user_type"] = $rstRow["user_type"];
+			$_SESSION["staff_permissions"] = $rstRow["staff_permissions"];
+			
+			$strWhere = "user_id = '" . $_SESSION["client_id"] . "' and status_id = 1";
+			$rstRow = GetRecord("tbllog", $strWhere);
+			if(empty($rstRow["user_id"]))
+			{
+				activity_log($_SESSION["client_id"], 2, 1);
+			}
 		}
 	}
 	else
@@ -1450,6 +1386,16 @@
 			return $n;	
 
 	}
-	
-	
+
+	// Get Today Invoice id
+	function TodayInvoiceId($date, $table)
+	{
+		$strQuery  = "SELECT MAX(today_invoice_id) AS max_id FROM `".$table."` WHERE `date` LIKE '%".$date."%'";
+		//echo $strQuery; die;
+		$nResult = MySQLQuery($strQuery);	
+		$rstRow = mysql_fetch_array($nResult);
+		return $rstRow['max_id'] + 1;
+	}
+
+		
 ?>

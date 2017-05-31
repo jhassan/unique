@@ -190,7 +190,7 @@
 		case 'GroupRequest':
 		if($_POST['one_way_or_return'] == 1)
 		{
-			$_POST['date_of_deparcher'] = "";
+			$_POST['date_of_return'] = "";
 		}
 			$arr = array("no_of_pax" => $_POST['no_of_pax'],
 						"sector" => $_POST['sector'],
@@ -209,17 +209,23 @@
 		// Issue OR Refund
 
 		case "IssueOrRefund":
+			$date = date("Y-m-d");
+			$today_invoice_id = TodayInvoiceId($date,"tblissuerefund");
 			$arr = array("pax_name" => $_POST['pax_name'],
 						"sector" => $_POST['sector'],
-						"pin" => $_POST['pin'],
+						//"amount" => RemoveComma($_POST['amount']),
 						"pnr" => $_POST['pnr'],
 						"air_line_id" => $_POST['air_line_id'],
+						"air_line_code" => $_POST['air_line_code'],
 						"mode_type" => $_POST['mode_type'],
 						"user_id" => $_SESSION["client_id"],
+						'today_invoice_id' => $today_invoice_id,
 						"date" => date("Y-m-d H:i:s")
 						);
 
 			$nLastId = InsertRec("tblissuerefund", $arr);
+			// Log data
+			activity_log($_SESSION["client_id"],4, 0, "PNR: ".$_POST['pnr']);
 			header("Location: issue_or_refund?msg=sent");
 
 			// if($str == "sent")
@@ -227,79 +233,74 @@
 			// else
 			// 	header("Location: issue_or_refund?msg=nosent");
 						
-			// $Where = "air_line_id = '".$_POST['air_line_id']."'";
-			// $strAirLine = GetRecord('tblairlines', $Where);
+			$Where = "air_line_id = '".$_POST['air_line_id']."'";
+			$strAirLine = GetRecord('tblairlines', $Where);
 
-			// $Issue = $_POST['Issue'];
-			// $body = "
+			$Issue = $_POST['mode_type'];
+			$body = "
 
-			// <table>
+			<table>
 
-			// <tr align='left'>
+			<tr align='left'>
 
-			// <th>Email From:</th>
+			<th>Email From:</th>
 
-			// <td align='left'>".$_SESSION["strUserName"]."</td>
+			<td align='left'>".$_SESSION["strUserName"]."</td>
 
-			// </tr>
-			// <tr align='left'>
+			</tr>
+			<tr align='left'>
 
-			// <th align='left'>Pax Name:</th>
+			<th align='left'>Pax Name:</th>
 
-			// <td align='left'>".$pax_name."</td>
+			<td align='left'>".$_POST['pax_name']."</td>
 
-			// </tr>
+			</tr>
 
-			// <tr>
+			<tr>
 
-			// <th align='left'>Sector:</th>
+			<th align='left'>Sector:</th>
 
-			// <td>".$sector."</td>
+			<td>".$_POST['sector']."</td>
 
-			// </tr>
+			</tr>
 
-			// <tr>
+			<tr>
 
-			// <th align='left'>PIN:</th>
 
-			// <td>".$pin."</td>
+			<tr>
 
-			// </tr>
+			<th align='left'>PNR:</th>
 
-			// <tr>
+			<td>".$_POST['pnr']."</td>
 
-			// <th align='left'>PNR:</th>
+			</tr>
 
-			// <td>".$PNR."</td>
+			<tr>
 
-			// </tr>
+			<th align='left'>Air Line Name:</th>
 
-			// <tr>
+			<td>".$strAirLine['air_line_name']."</td>
 
-			// <th align='left'>Air Line Name:</th>
+			</tr>
 
-			// <td>".$strAirLine['air_line_name']."</td>
+			<tr>
 
-			// </tr>
+			<th align='left'>Issue:</th>
 
-			// <tr>
+			<td>".$arrIssue[$Issue-1]."</td>
 
-			// <th align='left'>Issue:</th>
+			</tr>
 
-			// <td>".$arrIssue[$Issue-1]."</td>
+			</table>
 
-			// </tr>
-
-			// </table>
-
-			// ";
+			";
 			
-			// $EmployeeEmail = UserEmail($_SESSION['employee_id']);
-			// $to  = TO.", ".$EmployeeEmail;
+			//$EmployeeEmail = UserEmail($_SESSION['employee_id']);
+			//$to  = TO.", ".$EmployeeEmail;
+			$to = "b2b@uniquegroup.com.pk";
+			$subject = "Issue or Refund";
 
-			// $subject = "Issue or Refund";
-
-			// $str = SendEmail($to, $from, $subject, $body);
+			$str = SendEmail($to, $from, $subject, $body);
 
 			
 
@@ -337,69 +338,65 @@
 			UploadImage($fileName, $fileTempName, $folderName);
 			}
 			//$fileName = generateRandomString(5).$fileName; 
-			$arr = array("amount" => $_POST['Amount'],
+			$date = date("Y-m-d");
+			$today_invoice_id = TodayInvoiceId($date,"tblepayment");
+			$arr = array("amount" => RemoveComma($_POST['Amount']),
 						"transection_id" => $_POST['transection_id'],
-						"pin" => $_POST['pin'],
 						"bank_id" => $_POST['bank_id'],
 						"user_id" => $_SESSION["client_id"],
 						"bank_slip_image" => $fileName,
+						"today_invoice_id" => $today_invoice_id,
 						"date" => date("Y-m-d H:i:s")
 						);
 
 			$nLastId = InsertRec("tblepayment", $arr);
 
+			//header("Location: payment?msg=sent");
+
+			$body = "
+
+			<table>
+			<tr align='left'>
+
+			<th>Email From:</th>
+
+			<td align='left'>".$_SESSION["strUserName"]."</td>
+
+			</tr>
+			<tr align='left'>
+
+			<th>Amount:</th>
+
+			<td align='left'>".$_POST['Amount']."</td>
+
+			</tr>
+
+			<tr>
+
+			<th>TransductionID:</th>
+
+			<td>".$_POST['transection_id']."</td>
+
+			</tr>
+
+			<tr>
+
+			<th align='left'>Bank:</th>
+
+			<td>".$arrBank[$_POST['bank_id'] - 1]."</td>
+
+			</tr>
+
+			</table>
+
+			";
+			$EmployeeEmail = UserEmail($_SESSION['employee_id']);
+			$TO = "b2b@uniquegroup.com.pk";
+			//$to  = $TO.", ".$EmployeeEmail;
+			$subject = "Payment";
+
+			$str = SendEmail($TO, $from, $subject, $body);
 			header("Location: payment?msg=sent");
-
-			// $body = "
-
-			// <table>
-			// <tr align='left'>
-
-			// <th>Email From:</th>
-
-			// <td align='left'>".$_SESSION["strUserName"]."</td>
-
-			// </tr>
-			// <tr align='left'>
-
-			// <th>Amount:</th>
-
-			// <td align='left'>".$Amount."</td>
-
-			// </tr>
-
-			// <tr>
-
-			// <th>TransductionID:</th>
-
-			// <td>".$transection_id."</td>
-
-			// </tr>
-
-			// <tr>
-
-			// <th align='left'>PIN:</th>
-
-			// <td>".$pin."</td>
-
-			// </tr>
-
-			// <tr>
-
-			// <th align='left'>Bank:</th>
-
-			// <td>".$bank."</td>
-
-			// </tr>
-
-			// </table>
-
-			// ";
-			// $EmployeeEmail = UserEmail($_SESSION['employee_id']);
-			// $to  = TO.", ".$EmployeeEmail;
-			// $subject = "Payment";
-
-			// $str = SendEmail($to, $from, $subject, $body);
 			// if($str == "sent")
 			// 	header("Location: payment?msg=sent");
 			// else
@@ -438,10 +435,11 @@
 			$to  = TO.", ".$EmployeeEmail;
 
 			$str = SendEmail($to, $from, $subject, $body);
-			if($str == "sent")
-				header("Location: feedback?msg=sent");
-			else
-				header("Location: feedback?msg=nosent");
+			header("Location: feedback?msg=sent");
+			// if($str == "sent")
+			// 	header("Location: feedback?msg=sent");
+			// else
+			// 	header("Location: feedback?msg=nosent");
 		break;
 
 		// change password
@@ -757,7 +755,7 @@ table td[class*=col-], table th[class*=col-] {
 			$request_id = $_POST['request_id'];
 			$Where = "id = '$request_id'";
 			// Check update status
-			$arr = array("amount" => $_POST['amount'],
+			$arr = array("amount" => RemoveComma($_POST['amount']),
 						"comments" => $_POST['user_comments']);
 			UpdateRec('tblgrouprequest', $Where, $arr);
 		break;
@@ -772,5 +770,64 @@ table td[class*=col-], table th[class*=col-] {
 			echo json_encode($nRec);		
 		break;
 
+		// Update Available Balance
+		case 'UpdateAvailableBalance':
+			$client_id = (int)$_POST['client_id'];
+			$current_available_balance = $_POST['current_available_balance'];
+			//echo $client_id."****".$current_available_balance; die;
+			$Where = "client_id = '$client_id' AND staus_id = 1"; // AND staus_id = 0
+			$nRec = GetRecord("tblavailablebalance", $Where);
+			$db_balance = $nRec['available_balance'];
+			$current_available_balance = RemoveComma(number_format($current_available_balance,2));
+			//echo $db_balance ."****". $current_available_balance; die;
+			// Insert new if balance is update
+			if($db_balance != $current_available_balance)
+			{
+				// Set status 0 to keep record history
+				$arr = array("staus_id" => 0);
+				UpdateRec('tblavailablebalance', $Where, $arr);
+				// insert new balance
+				$arr = array("available_balance" => $current_available_balance,
+						"staus_id" => 1,
+						"client_id" => $client_id,
+						"date" => date("Y-m-d H:i:s"));
+				InsertRec('tblavailablebalance', $arr);
+			}
+			
+		break;
+
+		// Save Encode URL to DB
+		case 'SaveEncodeURLDB':
+		//echo "adfasd"; die;
+			//print_r($_POST); die;
+			$client_id = (int)$_POST['client_id'];
+			$url = $_POST['url'];
+			$type_id = $_POST['type_id'];
+			$air_line_id = $_POST['air_line_id'];
+			$Where = "client_id = '$client_id' AND air_line_id = '$air_line_id' AND url_encode = '$url'"; // AND staus_id = 0
+			$nRec = GetRecord("tblencodeurl", $Where);
+			$arr = array("client_id" => $client_id,
+						  "air_line_id" => $air_line_id,
+						  "type_id" => $type_id,
+						  "url_encode" => $url);
+			if(empty($nRec))
+				InsertRec('tblencodeurl', $arr);
+			else
+				UpdateRec('tblencodeurl', $Where, $arr);
+			echo "2";
+		break;
+
+		// Get Ticket Comments
+		case 'GetTicketComments':
+			$comment_id = $_POST['comment_id'];
+			$Where = "id = '$comment_id'";
+			$nRec = GetRecord("tblissuerefund", $Where);
+			if(!empty($nRec['user_comment']))
+				echo $nRec['user_comment'];
+			else
+				echo "";
+		break;	
 	}
+
+	
 ?>
