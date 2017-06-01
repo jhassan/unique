@@ -187,6 +187,8 @@ function redirect($url) {
                                 <li><a href="daily_sale">Daily Sale</a></li>
                                 <?php } if (in_array('65', $staff_permissions)) { ?>
                                 <li><a href="daily_payment">Daily Payment</a></li>
+                                <?php } if (in_array('66', $staff_permissions)) { ?>
+                                <li><a href="client_available_balance">Client Available Balance</a></li>
                                 <?php } ?>
                             </ul>
                             <!-- /.nav-second-level -->

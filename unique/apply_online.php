@@ -15,7 +15,13 @@ label.error { color: red; }
   <div class="content">
     <div class="container_12">
         <h3>Apply Online</h3>
-        <form id="contact_form" class="contact_form" action="" method="post">
+        <?php 
+        if(isset($_GET['msg']) && $_GET['msg'] == 1): ?>
+        <p style="color: green;">Emails send successfully!</p>
+      <?php elseif(isset($_GET['msg']) && $_GET['msg'] == 0): ?>
+        <p style="color: red;">Emails Not send successfully!</p>
+      <?php endif; ?>
+        <form id="contact_form" class="contact_form" action="email_apply_online.php" method="post" enctype="multipart/form-data">
           <fieldset>
             <label class="name grid_4" style="margin-left: 0px;">
               <input type="text" name="owner_name" placeholder="Owner Name" class="required">
@@ -25,11 +31,15 @@ label.error { color: red; }
               <input type="text" name="company_name" placeholder="Company Name" value="" class="required">
               <br class="clear">
               </label>
-            <label class="name grid_4">
-              <input type="text" name="cnic" placeholder="CNIC" value="" class="required">
+              <label class="email grid_4">
+              <input type="text" name="email" placeholder="Email" value="" class="required email">
+              <br class="clear">
+              </label>
+            <label class="name grid_4" style="margin-left: 0px;">
+              <input type="text" name="cnic" placeholder="CNIC" value="" class="required number_only">
               <br class="clear">
             </label>
-            <label class="name grid_4" style="margin-left: 0px;">
+            <label class="name grid_4">
               <input type="text" name="city" placeholder="City" value="" class="required">
               <br class="clear">
             </label>
@@ -37,12 +47,17 @@ label.error { color: red; }
               <input type="text" name="address" placeholder="Address" value="" class="required">
               <br class="clear">
             </label>
-            <label class="name grid_4">
-              <input type="text" name="office_no" placeholder="Office #" value="" class="required">
+            <label class="name grid_4" style="margin-left: 0px;">
+              <input type="text" name="office_no" placeholder="Office #" value="" class="required number_only">
               <br class="clear">
             </label>
+            <label class="name grid_4">
+              <input type="text" name="cell_no" placeholder="Cell #" value="" class="required number_only">
+              <br class="clear">
+            </label>
+            <div class="clear"></div>
             <label class="name grid_4" style="margin-left: 0px;">
-              <input type="text" name="cell_no" placeholder="Cell #" value="" class="required">
+              <textarea type="text" name="descriptions" placeholder="Descriptions" class="required"></textarea>
               <br class="clear">
             </label>
             <div class="clear"></div>
@@ -63,6 +78,26 @@ label.error { color: red; }
             <label class="name grid_4">
               <p class="file_p">NTN Certificate Copy</p>
               <input type="file" name="ntn_certificate_copy" value="" class="required">
+              <br class="clear">
+            </label>
+            <label class="name grid_4" style="margin-left: 0px; margin-top: 20px;">
+              <p class="file_p">IATA Valid License Copy (if IATA)</p>
+              <input type="file" name="iata_valid_license" value="" class="required">
+              <br class="clear">
+            </label>
+            <label class="name grid_4" style="margin-top: 20px;">
+              <p class="file_p">OPEN dated Guarantee cheque</p>
+              <input type="file" name="guarantee_cheque" value="" class="required">
+              <br class="clear">
+            </label>
+            <label class="name grid_4" style="margin-top: 20px;">
+              <p class="file_p">Owner CNIC Copy(front)</p>
+              <input type="file" name="cnic_copy_1" value="" class="">
+              <br class="clear">
+            </label>
+            <label class="name grid_4" style="margin-left: 0px; margin-top: 20px;">
+              <p class="file_p">Owner CNIC Copy(back)</p>
+              <input type="file" name="cnic_copy_2" value="" class="required">
               <br class="clear">
             </label>
             <div class="clear"></div>

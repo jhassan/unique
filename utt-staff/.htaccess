@@ -102,6 +102,8 @@ RewriteRule ^daily_sale$ daily_sale.php [L]
 
 RewriteRule ^daily_payment$ daily_payment.php [L]
 
+RewriteRule ^client_available_balance$ client_available_balance.php [L]
+
 
 
 

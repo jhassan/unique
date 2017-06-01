@@ -23,7 +23,7 @@
 <header>
   <div class="container_12">
     <div class="grid_3" style="margin-top: 40px;">
-      <a href="home"><img src="images/logo.png" alt=""></a>
+      <a href="/"><img src="images/logo.png" alt=""></a>
       <div class="clear"></div>
     </div>
     <div class="menu_block">
