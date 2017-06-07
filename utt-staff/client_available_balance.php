@@ -67,7 +67,7 @@ if(isset($_GET["status_id"])) $status_id = $_GET["status_id"];
                                         $startpoint = ($page * $per_page) - $per_page;
                                         $SQL = "SELECT `available_balance`, user_name FROM tblavailablebalance 
                                                 INNER JOIN tbluser on tbluser.user_id = tblavailablebalance.client_id
-                                                WHERE `staus_id` = '1' ORDER BY user_name ASC LIMIT {$startpoint} , {$per_page}";
+                                                WHERE `staus_id` = '1' AND user_status = 1 AND user_type = '0' ORDER BY user_name ASC LIMIT {$startpoint} , {$per_page}";
                                         //echo $SQL;
                                          $result = mysqli_query($conn, $SQL);
                                          if (mysqli_num_rows($result) != 0) {
