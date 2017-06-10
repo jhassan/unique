@@ -1,0 +1,814 @@
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} ^googlebot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^googlebot-image [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^googlebot-mobile [OR]
+RewriteCond %{HTTP_USER_AGENT} ^yahoo-blogs/v3.9 [OR]
+RewriteCond %{HTTP_USER_AGENT} ^yahoo-mmcrawler [OR]
+RewriteCond %{HTTP_USER_AGENT} ^MSNBot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^AltaVista [OR]
+RewriteCond %{HTTP_USER_AGENT} ^msnbot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Slurp [OR]
+RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR]
+RewriteCond %{HTTP_USER_AGENT} ^bingbot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Baiduspider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Bot\ mailto:craftbot@yahoo.com [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ChinaClaw [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Custo [OR]
+RewriteCond %{HTTP_USER_AGENT} ^DISCo [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Demon [OR]
+RewriteCond %{HTTP_USER_AGENT} ^eCatch [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EirGrabber [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailSiphon [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailWolf [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Express\ WebPictures [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ExtractorPro [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EyeNetIE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^FlashGet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetRight [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetWeb! [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go!Zilla [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go-Ahead-Got-It [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GrabNet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Grafula [OR]
+RewriteCond %{HTTP_USER_AGENT} ^HMView [OR]
+RewriteCond %{HTTP_USER_AGENT} ^HTTrack [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Stripper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Sucker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Indy\ Library [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^InterGET [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Internet\ Ninja [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JetCar [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JOC\ Web\ Spider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^larbin [OR]
+RewriteCond %{HTTP_USER_AGENT} ^LeechFTP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mass\ Downloader [OR]
+RewriteCond %{HTTP_USER_AGENT} ^MIDown\ tool [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mister\ PiX [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Navroad [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NearSite [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetAnts [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Net\ Vampire [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetZIP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Octopus [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Explorer [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Navigator [OR]
+RewriteCond %{HTTP_USER_AGENT} ^PageGrabber [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Papa\ Foto [OR]
+RewriteCond %{HTTP_USER_AGENT} ^pavuk [OR]
+RewriteCond %{HTTP_USER_AGENT} ^pcBrowser [OR]
+RewriteCond %{HTTP_USER_AGENT} ^RealDownload [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ReGet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SiteSnagger [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SmartDownload [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperBot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperHTTP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Surfbot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^tAkeOut [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Teleport\ Pro [OR]
+RewriteCond %{HTTP_USER_AGENT} ^VoidEYE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Image\ Collector [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Sucker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebAuto [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebCopier [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebFetch [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebGo\ IS [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebLeacher [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebReaper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebSauger [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website\ eXtractor [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website\ Quester [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebStripper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebWhacker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebZIP [OR]
+#RewriteCond %{HTTP_USER_AGENT} ^Wget [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Widow [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WWWOFFLE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Aboundex [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^80legs [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^360Spider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Java [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Cogentbot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Alexibot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^asterias [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^attach [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^BackDoorBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^BackWeb [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Bandit [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^BatchFTP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Bigfoot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Black.Hole [OR]  
+RewriteCond %{HTTP_USER_AGENT} ^BlowFish [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^BotALot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Buddy [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^BuiltBotTough [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Bullseye [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^BunnySlippers [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Cegbfeieh [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^CheeseBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^CherryPicker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Collector [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Copier [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^CopyRightCheck [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^cosmos [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Crescent [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^AIBOT [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^DIIbot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^DittoSpyder [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Devil [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Wonder [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^dragonfly [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Drip [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EasyDL [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ebingbong [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EmailCollector [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EroCrawler [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Exabot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Extractor [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Foobot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^flunky [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^FrontPage [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^gotit [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Harvest [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^hloader [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^humanlinks [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^IlseBot [OR]  
+RewriteCond %{HTTP_USER_AGENT} ^InfoNaviRobot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^InfoTekies [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Intelliseek [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^InterGET [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Internet\ Ninja [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Iria [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Jakarta [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^JennyBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^JetCar [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^JOC [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^JustView [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Jyxobot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Kenjin.Spider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Keyword.Density [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^larbin [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^LexiBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^lftp [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^libWeb/clsHTTP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^likse [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^LinkextractorPro [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^LinkScan/8.1a.Unix [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^LNSpiderguy [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^LinkWalker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^lwp-trivial [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^LWP::Simple [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Magnet [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mag-Net [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^MarkWatch [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mass\ Downloader [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mata.Hari [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Memo [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Microsoft.URL [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Microsoft\ URL\ Control [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^MIDown\ tool [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^MIIxpc [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mirror [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Missigua\ Locator [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mister\ PiX [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^moget [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/3.Mozilla/2.01 [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla.*NEWT [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NAMEPROTECT [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Navroad [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NearSite [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetAnts [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Netcraft [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetMechanic [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetSpider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Net\ Vampire [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetZIP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NextGenSearchBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NG [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NICErsPRO [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^niki-bot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NimbleCrawler [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Ninja [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NPbot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Octopus [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Explorer [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Navigator [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Openfind [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^OutfoxBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^PageGrabber [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Papa\ Foto [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^pavuk [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^pcBrowser [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^PHP\ version\ tracker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Pockey [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ProPowerBot/2.14 [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ProWebWalker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^psbot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Pump [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^QueryN.Metasearch [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^RealDownload [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Reaper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Recorder [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ReGet [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^RepoMonkey [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^RMA [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Siphon [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SiteSnagger [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SlySearch [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SmartDownload [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Snake [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Snapbot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Snoopy [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^sogou [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SpaceBison [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SpankBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^spanner [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Sqworm [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Stripper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Sucker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SuperBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SuperHTTP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Surfbot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^suzuran [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Szukacz/1.4 [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^tAkeOut [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Teleport [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Telesoft [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^TurnitinBot/1.5 [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^The.Intraformant [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^TheNomad [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^TightTwatBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Titan [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^True_Robot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^turingos [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^TurnitinBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^URLy.Warning [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Vacuum [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^VCI [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^VoidEYE [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Image\ Collector [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Sucker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebAuto [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebBandit [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Webclipping.com [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebCopier [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebEMailExtrac.* [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebEnhancer [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebFetch [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebGo\ IS [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Web.Image.Collector [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebLeacher [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebmasterWorldForumBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebReaper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebSauger [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Website\ eXtractor [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Website\ Quester [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Webster [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebStripper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebWhacker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebZIP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Whacker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Widow [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WISENutbot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WWWOFFLE [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WWW-Collector-E [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Xenu [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ZmEu [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Zyborg [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Acunetix [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^FHscan [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Baiduspider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Yandex [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Zeus
+RewriteRule ^.* - [F,L]
+
+order allow,deny
+deny from 216.32.73.122 # stealth bot
+deny from 63.160.77.236 # stealth bot
+deny from 12.44.181.220 # unknown bot
+deny from 12.44.172.92 # stealth bot
+deny from 139.18.2. # findlinks bot
+deny from 70.85.193.178 # unknown bot
+deny from 82.80. # israel
+deny from 149.20.54.229
+deny from 82.81.
+deny from 74.123.104.18
+deny from 46.244.10.179
+deny from 213.180.128. # poland
+deny from 213.180.129.
+deny from 213.180.130.
+deny from 213.180.131.
+deny from 66.150.55.230 # findwhat.com stealth bot
+deny from 67.15.175.114 # unknown bot
+deny from 217.113.244.119 # spanish SE
+deny from 194.224.199. # private spanish server
+deny from 81.19.66. # russia
+deny from 213.176.126. # iran
+deny from 208.223.208.181 # security-lab1.juniper.net
+deny from 208.223.208.182
+deny from 208.223.208.183
+deny from 123.252.193.20
+deny from 208.223.208.184
+deny from 208.223.208.185
+deny from 67.167.114.21 # BS law-x.com scraper site bot
+deny from 194.44.42. # ukraine
+deny from 209.203.192. # Expedite Marketing
+deny from 209.203.193.
+deny from 209.203.194.
+deny from 209.203.195.
+deny from 209.203.196.
+deny from 209.203.197.
+deny from 209.203.198.
+deny from 209.203.199.
+deny from 209.203.200.
+deny from 209.203.201.
+deny from 209.203.202.
+deny from 209.203.203.
+deny from 209.203.204.
+deny from 209.203.205.
+deny from 209.203.206.
+deny from 209.203.207.
+deny from 64.62.175. # unknown bandwidth sucker
+deny from 219.136.171. # china unknown bot
+deny from 216.150.24.122 # sonicleads.com spambot
+deny from 216.150.24.123
+deny from 210.14.32. # annoying philipines spammer
+deny from 220.132.126. # taiwan useragent = 3
+deny from 66.194.6. # websense.com bandwidth waster
+deny from 12.17.130.27 # sitesucker
+deny from 65.164.129.91
+deny from 207.155.199.163
+deny from 208.252.91.3
+deny from 198.54. # south africa scams, spam, etc
+deny from 66.132.132.63 # securityspace.com
+deny from 81.18.32. # nigeria
+deny from 81.18.33.
+deny from 81.18.34.
+deny from 81.18.35.
+deny from 81.18.36.
+deny from 81.18.37.
+deny from 81.18.38.
+deny from 81.18.39.
+deny from 81.18.40.
+deny from 81.18.41.
+deny from 81.18.42.
+deny from 81.18.43.
+deny from 81.18.44.
+deny from 81.18.45.
+deny from 81.18.46.
+deny from 81.18.47.
+deny from 192.115.134. # Israel, hacker heaven
+deny from 65.11.200.242 # direct revenue bot
+deny from 65.75.128.30 # fotopages.com
+deny from 204.8.168. # gator.com
+deny from 204.8.169.
+deny from 204.8.170.
+deny from 204.8.171.
+deny from 64.152.73.
+deny from 66.111.48.80 # spambot from russia
+deny from 68.211.2.61 # clown using site copier on books
+deny from 64.42.84.70 # addresses.com spambot
+deny from 67.127.13.70 # clown hitting with gethtmlcontents3 from secure site
+deny from 80.230. # israel
+deny from 80.250.32. # nigeria
+deny from 80.250.33.
+deny from 80.250.34.
+deny from 80.250.35.
+deny from 80.250.36.
+deny from 80.250.37.
+deny from 80.250.38.
+deny from 80.250.39.
+deny from 80.250.40.
+deny from 80.250.41.
+deny from 80.250.42.
+deny from 80.250.43.
+deny from 80.250.44.
+deny from 80.250.45.
+deny from 80.250.46.
+deny from 80.250.47.
+deny from 69.28.130. # quepasa.com
+deny from 213.8. # israel
+deny from 64.42.105. # unknown speed bot
+deny from 141.85. # romania
+deny from 128.238.55. # polybot
+deny from 67.68.89. # unknown masking bot
+deny from 66.36.242.25 # unknown bot
+deny from 81.199. # israel nigeria etc
+deny from 195.111. # hungary
+deny from 192.115.106. # clown from Israel speed downloading
+deny from 204.94.59. # brandimensions.com bandwidth waster
+deny from 12.209.181.242 # speed ripping unknown agent
+deny from 217.73. # romania ukraina russia etc
+deny from 217.218. # iran
+deny from 217.219. # iran
+deny from 216.53.84.61 # mail.mccarter.com
+deny from 169.132.149.100 # www.mccarter.com - new jersey law firm
+deny from 213.226.16. # bulgaria
+deny from 216.252.167. # idiot from Ghana demands free merch for many emails
+deny from 65.102. # WebContent Internatioanl
+deny from 216.163.255.1 # rpa.metlife.com bored employees
+deny from 67.127.164.125 # DSL bandwidth waster
+deny from 193.253.199. # france SE art-online.com bandwidth waster
+deny from 80.179.254. # clown from Israel using downloader
+deny from 64.37.103. # spambots and other non customers
+deny from 69.61.12.100 # spambot from servershost.net
+deny from 69.61.12.101
+deny from 66.246.43.167
+deny from 64.124.14. # markmonitor.com
+deny from 38.144.36.11 # allresearch.com
+deny from 38.144.36.12
+deny from 38.144.36.13
+deny from 38.144.36.14
+deny from 38.144.36.15
+deny from 38.144.36.16
+deny from 38.144.36.17
+deny from 206.28.72. # gettyimages.com bandwidth waster
+deny from 206.28.73.
+deny from 206.28.74.
+deny from 206.28.75.
+deny from 206.28.76.
+deny from 206.28.77.
+deny from 206.28.78.
+deny from 206.28.79.
+deny from 209.73.228.160 # allresearch.com
+deny from 209.73.228.161
+deny from 209.73.228.162
+deny from 209.73.228.163
+deny from 209.73.228.164
+deny from 209.73.228.165
+deny from 209.73.228.166
+deny from 209.73.228.167
+deny from 209.73.228.168
+deny from 209.73.228.169
+deny from 209.73.228.170
+deny from 209.73.228.171
+deny from 209.73.228.172
+deny from 209.73.228.173
+deny from 209.73.228.174
+deny from 209.73.228.175
+deny from 158.108. # thailand university
+deny from 168.187. # kuwait ministry of communications
+deny from 168.188. # korea university
+deny from 66.207.120.221 # net-sweeper.com
+deny from 66.207.120.222
+deny from 66.207.120.223
+deny from 66.207.120.224
+deny from 66.207.120.225
+deny from 66.207.120.226
+deny from 66.207.120.227
+deny from 66.207.120.228
+deny from 66.207.120.229
+deny from 66.207.120.230
+deny from 66.207.120.231
+deny from 66.207.120.232
+deny from 66.207.120.233
+deny from 66.207.120.234
+deny from 66.207.120.235
+deny from 167.24. # usaa.com and wastemylife.com p3p client
+deny from 192.118.48.247 # icomverse.com (Israel, hacker heaven)
+deny from 192.118.48.248
+deny from 192.118.48.249
+deny from 67.209.128. # clown from TX, wastes bandwidth, abusive feedback
+deny from 12.148.209. # NameProtect.com bandwidth waster
+deny from 12.148.196. # NameProtect.com bandwidth waster
+deny from 212.19.205. # clown from Netherlands impersonating Webcrawler!
+deny from 206.190.171.172 # markwatch.com bandwidth waster (4 IPs)
+deny from 206.190.171.173
+deny from 206.190.171.174
+deny from 206.190.171.175
+deny from 211.157.
+deny from 211.74.
+deny from 64.14.202.182
+deny from 213.219.11.19
+deny from 193.220.178. # abusive crawler from Benin
+deny from 24.77.178.1 # abusive OK cable user
+deny from 68.65.53.71 # unknown user (java1.4.0_03) slowly crawling whole site!
+deny from 198.26.120.13 # unknown .MIL user (keeps hitting one page over and over!)
+deny from 63.148.99. # Cyveillance.com bandwidth waster
+deny from 65.118.41. # Cyveillance.com bandwidth waster
+deny from 192.116.85. # abusive crawler, no ref, no ua, Israel?
+deny from 62.119.21. # sweden including picsearch.com bot
+deny from 80.179.100. # Israeli bot
+deny from 80.248.64.50 # guestbook spambot
+deny from 64.106.213. # some clown in Jersey, Russian name, hammering links page
+deny from 62.220.103. # Iran
+deny from 89.207.18.182/22
+deny from 173.194.69.147/22
+deny from 149.3.176.145/22
+deny from 66.235.156.128/22
+deny from 173.194.69.125/22
+deny from 173.194.69.120/22
+deny from 173.194.69.102/22
+deny from 173.194.69.95/22
+deny from 173.194.69.94/22
+deny from 173.194.69.91/22
+deny from 173.0.88.2/22
+deny from 173.0.84.2/22
+deny from 173.0.84.34/22
+deny from 173.0.88.2/22
+deny from 173.0.88.34/22
+deny from 2.20.6.85/22
+deny from 63.245.213.92/22
+deny from 173.194.69.106/22
+deny from 173.194.69.147/22
+deny from 173.194.69.99/22
+deny from 173.194.69.103/22
+deny from 173.194.69.104/22
+deny from 173.194.69.105/22
+deny from 173.194.69.94/22
+deny from 173.194.69.106/22
+deny from 173.194.69.147/22
+deny from 173.194.69.99/22
+deny from 173.194.69.103/22
+deny from 173.194.69.104/22
+deny from 173.194.69.105/22
+deny from 173.194.69.94/22
+deny from 63.245.213.92/22
+deny from 63.245.217.20/22
+deny from 64.62.203.172/22
+deny from 173.194.69.102/22
+deny from 173.194.69.113/22
+deny from 173.194.69.138/22
+deny from 173.194.69.139/22
+deny from 173.194.69.100/22
+deny from 173.194.69.101/22
+deny from 64.62.203.172/22
+deny from 63.245.217.71/22
+deny from 188.112.175.207/22
+deny from 66.235.139.166/22
+deny from 66.235.138.2/22
+deny from 66.235.138.59/22
+deny from 66.235.139.153/22
+deny from 66.235.139.152/22
+deny from 66.235.138.44/22
+deny from 66.235.139.118/22
+deny from 66.235.138.18/22
+deny from 66.235.139.121/22
+deny from 66.235.138.19/22
+deny from 66.235.134.160/22
+deny from 66.235.133.8/22
+deny from 66.235.133.52/22
+deny from 66.235.133.33/22
+deny from 66.235.132.152/22
+deny from 66.235.133.62/22
+deny from 66.235.132.232/22
+deny from 66.235.132.118/22
+deny from 66.235.133.11/22
+deny from 66.235.132.121/22
+deny from 66.235.133.14/22
+deny from google.com
+deny from paypal.com
+deny from 112.2o7.com
+deny from firefox.com
+deny from env=stealthed
+allow from all
+
+
+# Block Bad Bots & Scrapers
+SetEnvIfNoCase User-Agent "Aboundex" bad_bot
+SetEnvIfNoCase User-Agent "80legs" bad_bot
+SetEnvIfNoCase User-Agent "360Spider" bad_bot
+SetEnvIfNoCase User-Agent "^Java" bad_bot
+SetEnvIfNoCase User-Agent "^Cogentbot" bad_bot
+SetEnvIfNoCase User-Agent "^Alexibot" bad_bot
+SetEnvIfNoCase User-Agent "^asterias" bad_bot
+SetEnvIfNoCase User-Agent "^attach" bad_bot
+SetEnvIfNoCase User-Agent "^BackDoorBot" bad_bot
+SetEnvIfNoCase User-Agent "^BackWeb" bad_bot
+SetEnvIfNoCase User-Agent "Bandit" bad_bot
+SetEnvIfNoCase User-Agent "^BatchFTP" bad_bot
+SetEnvIfNoCase User-Agent "^Bigfoot" bad_bot
+SetEnvIfNoCase User-Agent "^Black.Hole" bad_bot
+SetEnvIfNoCase User-Agent "^BlackWidow" bad_bot
+SetEnvIfNoCase User-Agent "^BlowFish" bad_bot
+SetEnvIfNoCase User-Agent "^BotALot" bad_bot
+SetEnvIfNoCase User-Agent "Buddy" bad_bot
+SetEnvIfNoCase User-Agent "^BuiltBotTough" bad_bot
+SetEnvIfNoCase User-Agent "^Bullseye" bad_bot
+SetEnvIfNoCase User-Agent "^BunnySlippers" bad_bot
+SetEnvIfNoCase User-Agent "^Cegbfeieh" bad_bot
+SetEnvIfNoCase User-Agent "^CheeseBot" bad_bot
+SetEnvIfNoCase User-Agent "^CherryPicker" bad_bot
+SetEnvIfNoCase User-Agent "^ChinaClaw" bad_bot
+SetEnvIfNoCase User-Agent "Collector" bad_bot
+SetEnvIfNoCase User-Agent "Copier" bad_bot
+SetEnvIfNoCase User-Agent "^CopyRightCheck" bad_bot
+SetEnvIfNoCase User-Agent "^cosmos" bad_bot
+SetEnvIfNoCase User-Agent "^Crescent" bad_bot
+SetEnvIfNoCase User-Agent "^Custo" bad_bot
+SetEnvIfNoCase User-Agent "^AIBOT" bad_bot
+SetEnvIfNoCase User-Agent "^DISCo" bad_bot
+SetEnvIfNoCase User-Agent "^DIIbot" bad_bot
+SetEnvIfNoCase User-Agent "^DittoSpyder" bad_bot
+SetEnvIfNoCase User-Agent "^Download\ Demon" bad_bot
+SetEnvIfNoCase User-Agent "^Download\ Devil" bad_bot
+SetEnvIfNoCase User-Agent "^Download\ Wonder" bad_bot
+SetEnvIfNoCase User-Agent "^dragonfly" bad_bot
+SetEnvIfNoCase User-Agent "^Drip" bad_bot
+SetEnvIfNoCase User-Agent "^eCatch" bad_bot
+SetEnvIfNoCase User-Agent "^EasyDL" bad_bot
+SetEnvIfNoCase User-Agent "^ebingbong" bad_bot
+SetEnvIfNoCase User-Agent "^EirGrabber" bad_bot
+SetEnvIfNoCase User-Agent "^EmailCollector" bad_bot
+SetEnvIfNoCase User-Agent "^EmailSiphon" bad_bot
+SetEnvIfNoCase User-Agent "^EmailWolf" bad_bot
+SetEnvIfNoCase User-Agent "^EroCrawler" bad_bot
+SetEnvIfNoCase User-Agent "^Exabot" bad_bot
+SetEnvIfNoCase User-Agent "^Express\ WebPictures" bad_bot
+SetEnvIfNoCase User-Agent "Extractor" bad_bot
+SetEnvIfNoCase User-Agent "^EyeNetIE" bad_bot
+SetEnvIfNoCase User-Agent "^Foobot" bad_bot
+SetEnvIfNoCase User-Agent "^flunky" bad_bot
+SetEnvIfNoCase User-Agent "^FrontPage" bad_bot
+SetEnvIfNoCase User-Agent "^Go-Ahead-Got-It" bad_bot
+SetEnvIfNoCase User-Agent "^gotit" bad_bot
+SetEnvIfNoCase User-Agent "^GrabNet" bad_bot
+SetEnvIfNoCase User-Agent "^googlebot" bad_bot
+SetEnvIfNoCase User-Agent "^googlebot-image" bad_bot 
+SetEnvIfNoCase User-Agent "^googlebot-mobile" bad_bot
+SetEnvIfNoCase User-Agent "^Grafula" bad_bot
+SetEnvIfNoCase User-Agent "^Harvest" bad_bot
+SetEnvIfNoCase User-Agent "^hloader" bad_bot
+SetEnvIfNoCase User-Agent "^HMView" bad_bot
+SetEnvIfNoCase User-Agent "^HTTrack" bad_bot
+SetEnvIfNoCase User-Agent "^humanlinks" bad_bot
+SetEnvIfNoCase User-Agent "^IlseBot" bad_bot
+SetEnvIfNoCase User-Agent "^Image\ Stripper" bad_bot
+SetEnvIfNoCase User-Agent "^Image\ Sucker" bad_bot
+SetEnvIfNoCase User-Agent "Indy\ Library" bad_bot
+SetEnvIfNoCase User-Agent "^InfoNaviRobot" bad_bot
+SetEnvIfNoCase User-Agent "^InfoTekies" bad_bot
+SetEnvIfNoCase User-Agent "^Intelliseek" bad_bot
+SetEnvIfNoCase User-Agent "^InterGET" bad_bot
+SetEnvIfNoCase User-Agent "^Internet\ Ninja" bad_bot
+SetEnvIfNoCase User-Agent "^Iria" bad_bot
+SetEnvIfNoCase User-Agent "^Jakarta" bad_bot
+SetEnvIfNoCase User-Agent "^JennyBot" bad_bot
+SetEnvIfNoCase User-Agent "^JetCar" bad_bot
+SetEnvIfNoCase User-Agent "^JOC" bad_bot
+SetEnvIfNoCase User-Agent "^JustView" bad_bot
+SetEnvIfNoCase User-Agent "^Jyxobot" bad_bot
+SetEnvIfNoCase User-Agent "^Kenjin.Spider" bad_bot
+SetEnvIfNoCase User-Agent "^Keyword.Density" bad_bot
+SetEnvIfNoCase User-Agent "^larbin" bad_bot
+SetEnvIfNoCase User-Agent "^LexiBot" bad_bot
+SetEnvIfNoCase User-Agent "^lftp" bad_bot
+SetEnvIfNoCase User-Agent "^libWeb/clsHTTP" bad_bot
+SetEnvIfNoCase User-Agent "^likse" bad_bot
+SetEnvIfNoCase User-Agent "^LinkextractorPro" bad_bot
+SetEnvIfNoCase User-Agent "^LinkScan/8.1a.Unix" bad_bot
+SetEnvIfNoCase User-Agent "^LNSpiderguy" bad_bot
+SetEnvIfNoCase User-Agent "^LinkWalker" bad_bot
+SetEnvIfNoCase User-Agent "^lwp-trivial" bad_bot
+SetEnvIfNoCase User-Agent "^LWP::Simple" bad_bot
+SetEnvIfNoCase User-Agent "^Magnet" bad_bot
+SetEnvIfNoCase User-Agent "^Mag-Net" bad_bot
+SetEnvIfNoCase User-Agent "^MarkWatch" bad_bot
+SetEnvIfNoCase User-Agent "^Mass\ Downloader" bad_bot
+SetEnvIfNoCase User-Agent "^Mata.Hari" bad_bot
+SetEnvIfNoCase User-Agent "^Memo" bad_bot
+SetEnvIfNoCase User-Agent "^Microsoft.URL" bad_bot
+SetEnvIfNoCase User-Agent "^Microsoft\ URL\ Control" bad_bot
+SetEnvIfNoCase User-Agent "^MIDown\ tool" bad_bot
+SetEnvIfNoCase User-Agent "^MIIxpc" bad_bot
+SetEnvIfNoCase User-Agent "^Mirror" bad_bot
+SetEnvIfNoCase User-Agent "^Missigua\ Locator" bad_bot
+SetEnvIfNoCase User-Agent "^Mister\ PiX" bad_bot
+SetEnvIfNoCase User-Agent "^moget" bad_bot
+SetEnvIfNoCase User-Agent "^Mozilla/3.Mozilla/2.01" bad_bot
+SetEnvIfNoCase User-Agent "^Mozilla.*NEWT" bad_bot
+SetEnvIfNoCase User-Agent "^NAMEPROTECT" bad_bot
+SetEnvIfNoCase User-Agent "^Navroad" bad_bot
+SetEnvIfNoCase User-Agent "^NearSite" bad_bot
+SetEnvIfNoCase User-Agent "^NetAnts" bad_bot
+SetEnvIfNoCase User-Agent "^Netcraft" bad_bot
+SetEnvIfNoCase User-Agent "^NetMechanic" bad_bot
+SetEnvIfNoCase User-Agent "^NetSpider" bad_bot
+SetEnvIfNoCase User-Agent "^Net\ Vampire" bad_bot
+SetEnvIfNoCase User-Agent "^NetZIP" bad_bot
+SetEnvIfNoCase User-Agent "^NextGenSearchBot" bad_bot
+SetEnvIfNoCase User-Agent "^NG" bad_bot
+SetEnvIfNoCase User-Agent "^NICErsPRO" bad_bot
+SetEnvIfNoCase User-Agent "^niki-bot" bad_bot
+SetEnvIfNoCase User-Agent "^NimbleCrawler" bad_bot
+SetEnvIfNoCase User-Agent "^Ninja" bad_bot
+SetEnvIfNoCase User-Agent "^NPbot" bad_bot
+SetEnvIfNoCase User-Agent "^Octopus" bad_bot
+SetEnvIfNoCase User-Agent "^Offline\ Explorer" bad_bot
+SetEnvIfNoCase User-Agent "^Offline\ Navigator" bad_bot
+SetEnvIfNoCase User-Agent "^Openfind" bad_bot
+SetEnvIfNoCase User-Agent "^OutfoxBot" bad_bot
+SetEnvIfNoCase User-Agent "^PageGrabber" bad_bot
+SetEnvIfNoCase User-Agent "^Papa\ Foto" bad_bot
+SetEnvIfNoCase User-Agent "^pavuk" bad_bot
+SetEnvIfNoCase User-Agent "^pcBrowser" bad_bot
+SetEnvIfNoCase User-Agent "^PHP\ version\ tracker" bad_bot
+SetEnvIfNoCase User-Agent "^Pockey" bad_bot
+SetEnvIfNoCase User-Agent "^ProPowerBot/2.14" bad_bot
+SetEnvIfNoCase User-Agent "^ProWebWalker" bad_bot
+SetEnvIfNoCase User-Agent "^psbot" bad_bot
+SetEnvIfNoCase User-Agent "^Pump" bad_bot
+SetEnvIfNoCase User-Agent "^QueryN.Metasearch" bad_bot
+SetEnvIfNoCase User-Agent "^RealDownload" bad_bot
+SetEnvIfNoCase User-Agent "Reaper" bad_bot
+SetEnvIfNoCase User-Agent "Recorder" bad_bot
+SetEnvIfNoCase User-Agent "^ReGet" bad_bot
+SetEnvIfNoCase User-Agent "^RepoMonkey" bad_bot
+SetEnvIfNoCase User-Agent "^RMA" bad_bot
+SetEnvIfNoCase User-Agent "Siphon" bad_bot
+SetEnvIfNoCase User-Agent "^SiteSnagger" bad_bot
+SetEnvIfNoCase User-Agent "^SlySearch" bad_bot
+SetEnvIfNoCase User-Agent "^SmartDownload" bad_bot
+SetEnvIfNoCase User-Agent "^Snake" bad_bot
+SetEnvIfNoCase User-Agent "^Snapbot" bad_bot
+SetEnvIfNoCase User-Agent "^Snoopy" bad_bot
+SetEnvIfNoCase User-Agent "^sogou" bad_bot
+SetEnvIfNoCase User-Agent "^SpaceBison" bad_bot
+SetEnvIfNoCase User-Agent "^SpankBot" bad_bot
+SetEnvIfNoCase User-Agent "^spanner" bad_bot
+SetEnvIfNoCase User-Agent "^Sqworm" bad_bot
+SetEnvIfNoCase User-Agent "Stripper" bad_bot
+SetEnvIfNoCase User-Agent "Sucker" bad_bot
+SetEnvIfNoCase User-Agent "^SuperBot" bad_bot
+SetEnvIfNoCase User-Agent "^SuperHTTP" bad_bot
+SetEnvIfNoCase User-Agent "^Surfbot" bad_bot
+SetEnvIfNoCase User-Agent "^suzuran" bad_bot
+SetEnvIfNoCase User-Agent "^Szukacz/1.4" bad_bot
+SetEnvIfNoCase User-Agent "^tAkeOut" bad_bot
+SetEnvIfNoCase User-Agent "^Teleport" bad_bot
+SetEnvIfNoCase User-Agent "^Telesoft" bad_bot
+SetEnvIfNoCase User-Agent "^TurnitinBot/1.5" bad_bot
+SetEnvIfNoCase User-Agent "^The.Intraformant" bad_bot
+SetEnvIfNoCase User-Agent "^TheNomad" bad_bot
+SetEnvIfNoCase User-Agent "^TightTwatBot" bad_bot
+SetEnvIfNoCase User-Agent "^Titan" bad_bot
+SetEnvIfNoCase User-Agent "^True_Robot" bad_bot
+SetEnvIfNoCase User-Agent "^turingos" bad_bot
+SetEnvIfNoCase User-Agent "^TurnitinBot" bad_bot
+SetEnvIfNoCase User-Agent "^URLy.Warning" bad_bot
+SetEnvIfNoCase User-Agent "^Vacuum" bad_bot
+SetEnvIfNoCase User-Agent "^VCI" bad_bot
+SetEnvIfNoCase User-Agent "^VoidEYE" bad_bot
+SetEnvIfNoCase User-Agent "^Web\ Image\ Collector" bad_bot
+SetEnvIfNoCase User-Agent "^Web\ Sucker" bad_bot
+SetEnvIfNoCase User-Agent "^WebAuto" bad_bot
+SetEnvIfNoCase User-Agent "^WebBandit" bad_bot
+SetEnvIfNoCase User-Agent "^Webclipping.com" bad_bot
+SetEnvIfNoCase User-Agent "^WebCopier" bad_bot
+SetEnvIfNoCase User-Agent "^WebEMailExtrac.*" bad_bot
+SetEnvIfNoCase User-Agent "^WebEnhancer" bad_bot
+SetEnvIfNoCase User-Agent "^WebFetch" bad_bot
+SetEnvIfNoCase User-Agent "^WebGo\ IS" bad_bot
+SetEnvIfNoCase User-Agent "^Web.Image.Collector" bad_bot
+SetEnvIfNoCase User-Agent "^WebLeacher" bad_bot
+SetEnvIfNoCase User-Agent "^WebmasterWorldForumBot" bad_bot
+SetEnvIfNoCase User-Agent "^WebReaper" bad_bot
+SetEnvIfNoCase User-Agent "^WebSauger" bad_bot
+SetEnvIfNoCase User-Agent "^Website\ eXtractor" bad_bot
+SetEnvIfNoCase User-Agent "^Website\ Quester" bad_bot
+SetEnvIfNoCase User-Agent "^Webster" bad_bot
+SetEnvIfNoCase User-Agent "^WebStripper" bad_bot
+SetEnvIfNoCase User-Agent "^WebWhacker" bad_bot
+SetEnvIfNoCase User-Agent "^WebZIP" bad_bot
+SetEnvIfNoCase User-Agent "Whacker" bad_bot
+SetEnvIfNoCase User-Agent "^Widow" bad_bot
+SetEnvIfNoCase User-Agent "^WISENutbot" bad_bot
+SetEnvIfNoCase User-Agent "^WWWOFFLE" bad_bot
+SetEnvIfNoCase User-Agent "^WWW-Collector-E" bad_bot
+SetEnvIfNoCase User-Agent "^Xaldon" bad_bot
+SetEnvIfNoCase User-Agent "^Xenu" bad_bot
+SetEnvIfNoCase User-Agent "^Zeus" bad_bot
+SetEnvIfNoCase User-Agent "ZmEu" bad_bot
+SetEnvIfNoCase User-Agent "^Zyborg" bad_bot
+
+# Vulnerability Scanners
+SetEnvIfNoCase User-Agent "Acunetix" bad_bot
+SetEnvIfNoCase User-Agent "FHscan" bad_bot
+
+# Aggressive Chinese Search Engine
+SetEnvIfNoCase User-Agent "Baiduspider" bad_bot
+
+# Aggressive Russian Search Engine
+SetEnvIfNoCase User-Agent "Yandex" bad_bot
+
+
+<Limit GET POST HEAD>
+Order Allow,Deny
+Allow from all
+
+# Cyveillance
+deny from 38.100.19.8/29
+deny from 38.100.21.0/24
+deny from 38.100.41.64/26
+deny from 38.105.71.0/25
+deny from 38.105.83.0/27
+deny from 38.112.21.140/30
+deny from 38.118.42.32/29
+deny from 65.213.208.128/27
+deny from 65.222.176.96/27
+deny from 65.222.185.72/29
+
+Deny from env=bad_bot
+</Limit>

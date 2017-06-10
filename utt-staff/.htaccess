@@ -2,6 +2,9 @@ Options +FollowSymLinks
 
 RewriteEngine on
 
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
 RewriteRule ^index$ index.php [L]
 
 RewriteRule ^index/(.*)$ ^index.php?error=1&%{QUERY_STRING} [R]
@@ -103,6 +106,8 @@ RewriteRule ^daily_sale$ daily_sale.php [L]
 RewriteRule ^daily_payment$ daily_payment.php [L]
 
 RewriteRule ^client_available_balance$ client_available_balance.php [L]
+
+RewriteRule ^manage_ticket$ manage_ticket.php [L]
 
 
 

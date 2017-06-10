@@ -1,124 +1,328 @@
-<?php include_once("header2.php"); ?>
-<div class="main">
-  <div class="container_12">
-    <div class="grid_12">
-      <div class="slider-relative">
-        <div class="slider-block">
-          <div class="slider"> <a href="#" class="prev"></a><a href="#" class="next"></a>
-            <ul class="items">
-              <li><img src="images/slide.jpg" alt="">
-                <div class="banner">
-                  <div>One Window Solution</div>
-                  <br>
-                  <span>For Travel Agencies</span> </div>
-              </li>
-              <?php
-              // Main banner
-              $SQL1 = "SELECT * FROM tblbanner WHERE banner_status = 1 ORDER BY banner_id DESC";      
-              $result1 = mysqli_query($connection, $SQL1) or die(mysqli_connect_error());
-              if(count($result1) > 0)
-              {
-              while($row = mysqli_fetch_array($result1)) { ?>
-              <li><img src="../utt-staff/images/banners/<?php echo $row['banner_image']; ?>" alt=""></li>
-              <?php }
-              } ?>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="content">
-    <div class="container_12">
-      <div class="grid_12">
-        <h3>Our Services</h3>
-      </div>
-      <div class="boxes">
-        <div class="grid_4">
-          <figure>
-            <div><img src="images/ticketing.jpg" alt=""></div>
-            <figcaption>
-              <h3>Ticketing</h3>
-              We bring non stop ticketing solution in just on click, either they are BSP carriers or Web Based Carriers all in graphical interface for B2B services.</figcaption>
-          </figure>
-        </div>
-        <div class="grid_4">
-          <figure>
-            <div><img src="images/hotel.jpg" alt=""></div>
-            <figcaption>
-              <h3>Visit Visa / Hotel Booking</h3>
-              Now you may apply for visit visa or make your hotel booking at your own with Tours View. Hassel free services. No phone call No delay.</figcaption>
-          </figure>
-        </div>
-        <div class="grid_4">
-          <figure>
-            <div><img src="images/24hours.jpg" alt=""></div>
-            <figcaption style="height: 336px;">
-              <h3>24/7 Help Line</h3>
-              Our representative are available 24/7 via our dedicated helpline for your assistance.</figcaption>
-          </figure>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <div class="grid_8">
+<?php
+  //       $servername = "localhost";
+		// $username = "toursvie_unique2";
+		// $password = ",&?@cl7T].]C";
+		// $dbname = "toursvie_toursview2017";
+		
+		
+		// $connection = mysqli_connect($servername,$username,$password,$dbname);
 
-        <div id="tabs">
+        define("DB_SERVER", "localhost");
+        define("DB_USERNAME", "travel20_meunitr");
+        define("DB_PASSWORD", "hb-MktoTpn6x");
+        define("DB_DATABASE", "travel20_tuntoursdbagent");
+
+        $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+        
+		if (!$connection)
+		{
+			die('Could not connect: ' . mysqli_connect_error());
+		}
+		else
+		{ 
+		
+		// $dbcheck = mysqli_select_db("$dbname");
+		// if (!$dbcheck) {
+		// 	echo mysqli_error(); die;
+		// }
+		}
+	
+
+?>
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="author" content="">
+
+
+
+    <title>Unique Travels</title>
+
+
+
+    <!-- Bootstrap Core CSS -->
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- MetisMenu CSS -->
+
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+
+
+    <!-- Custom CSS -->
+
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+
+
+    <!-- Custom Fonts -->
+
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <!--[if lt IE 9]>
+
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+    <div class="container">
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0px; height: 140px;">
+
+        <?php 
+		
+		$SQL = "SELECT * FROM tbllogo WHERE logo_status = '1'  ORDER BY logo_id DESC";			
+		 $result = mysqli_query($connection, $SQL) or die(mysqli_connect_error());
+		 $strRow = mysqli_fetch_array($result);
+
+		$Status = $strRow['logo_status'];
+
+		$Image = $strRow['logo_image'];
+		
+		
+?>
+	<div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                    <span class="sr-only">Toggle navigation</span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                </button>
+				<?php if(!empty($Image)) {?>
+                <div class="pull-left col-lg-4">
+                <a class="navbar-brand" href="home"><img src="../utt-staff/images/logo/<?php echo $Image;?>" height="80" 
+                width="300" alt="Logo"></a>
+                </div>
+                <?php } ?>
+                <div class="pull-left col-lg-2">&nbsp;</div>
+                <div class="pull-left col-lg-6" id="imageslideshow3"></div>
+
+            </div>	
+	
+    
+        </nav>
+        <div style="clear:both;"></div>
+        <div class="row">
+        
         <?php
-          $SQL = "SELECT * FROM tblnotification WHERE text_status = 1 ORDER BY `date` DESC";            
-           $result = mysqli_query($connection, $SQL) or die(mysqli_connect_error());
-           while($row = mysqli_fetch_array($result)) { // ,MYSQL_ASSOC
-           $text_color = $row['text_color'];
-           $text_bold  = $row['text_bold'];
-           if($text_color == 1)
-              $text_color = "#000";
-           elseif($text_color == 2)
-              $text_color = "blue";
-           elseif($text_color == 3)
-              $text_color = "red";
-           if($text_bold == 1)
-              $text_bold = "bold";
-            $image = $row['text_image'];
-      ?>
-        <h3 style="color: <?php echo $text_color; ?>; font-weight: <?php echo $text_bold; ?>; margin-top: 0px; margin-bottom: 0px;"><?php echo $row['marque_text']; ?></h3>
-        <p style="font-weight: bold;">Date:<?php echo date("d-m-Y", strtotime($row['date'])); ?></p>
-        <?php if(!empty($image)) { ?>
-            <img src="images/notification_images/<?php echo $image; ?>" class="img-thumbnail" alt="Images">  
-            <?php } ?>
-        <?php } ?>
+        // Main banner
+		$SQL1 = "SELECT * FROM tblbanner WHERE banner_status = 1 ORDER BY banner_id DESC";			
+		$result1 = mysqli_query($connection, $SQL1) or die(mysqli_connect_error());
+		$str = "";
+		if(count($result1) > 0)
+		{
+		while($row = mysqli_fetch_array($result1)) { // ,MYSQL_ASSOC
+
+			$str .= '["../utt-staff/images/banners/'.$row['banner_image'].'"],';
+
+		}
+		}
+		$banner = rtrim($str,",");
+		
+		// Header Top banner
+		$SQL2 = "SELECT * FROM tbltopbanner WHERE banner_status = 1 ORDER BY banner_id DESC";			
+		$result2 = mysqli_query($connection, $SQL2) or die(mysqli_connect_error());
+		$str2 = "";
+		if(count($result2) > 0)
+		{
+		while($row2 = mysqli_fetch_array($result2)) { // ,MYSQL_ASSOC
+
+			$str2 .= '["../utt-staff/images/top_banners/'.$row2['banner_image'].'"],';
+
+		}
+		}
+		$banner2 = rtrim($str2,",");
+		
+		?>
+		<div class="col-md-9" style="float:left; margin-top:50px;" id="imageslideshow2"></div>
+            <div class="col-md-2" style="float:right;">
+
+                <div class="login-panel panel panel-default" style="margin-top: 50px;"> 
+
+                <?php if(isset($_GET['error']) && $_GET['error'] == "1") {?>
+
+                <div class="alert alert-danger">User Name and Password is wrong!</div>
+
+                <?php } ?>
+
+                    <div class="panel-heading">
+
+                        <h3 class="panel-title">Please Sign In</h3>
+
+                    </div>
+
+                    
+
+                    <div class="panel-body">
+
+                        <form role="form" action="login.php" method="post" id="LoginForm">
+
+                            <fieldset>
+
+                                <div class="form-group">
+
+                                    <input class="form-control" placeholder="User Name" name="strNewLoginx" type="text" autofocus>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <input class="form-control" placeholder="Password" name="strNewPassword" type="password" value="">
+
+                                </div>
+
+                                <div class="checkbox hide">
+
+                                    <label>
+
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+
+                                    </label>
+
+                                </div>
+
+                                <div class="form-group col-lg-6" style="padding-left:0px;">
+
+                                    <button type="submit" class="btn btn-default">Login</button>
+
+                                </div>
+
+                                <!-- Change this to a button or input when using this as a form -->
+
+                                <!--<a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>-->
+
+                            </fieldset>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-      </div>
-      <div class="grid_4" style="float: right;">
-        <div class="newsletter_title">Notifications </div>
-        <div class="n_container" style="height: 300px; padding-bottom: 0px;">
-          <ul class="list" style="height: 300px;">
-            <marquee scrollamount="2" direction="up" style="height: 300px;">
-            <?php 
-                $SQLText = "SELECT * FROM tbltext WHERE text_status = 1 ORDER BY text_id DESC";         
-               $resultText = mysqli_query($connection, $SQLText) or die(mysqli_connect_error());
-               if(count($resultText) > 0)
-               {
-               while($rowText = mysqli_fetch_array($resultText)) { // ,MYSQL_ASSOC
-               $color = $rowText['text_color'];
-               $bold = $rowText['text_bold'];
-               if($color == 1)
-                  $classColor = "black";
-               else if($color == 2)
-                  $classColor = "blue";
-               else if($color == 3)
-                  $classColor = "red";        
-              if($bold == 1)
-                  $classBold = "bld"; 
-
-            ?>
-            <li><?php echo $rowText['marque_text']; ?></li>
-            <?php } }?>
-            </marquee>
-          </ul>
-          
-        </div>
-      </div>
-      <div class="clear"></div>
     </div>
-  </div>
-  <?php include_once("footer.php"); ?>
+
+
+
+    <!-- jQuery -->
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+
+
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+
+    <!-- Metis Menu Plugin JavaScript -->
+
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+
+
+    <!-- Custom Theme JavaScript -->
+
+    <script src="dist/js/sb-admin-2.js"></script>
+    
+    <script type="text/javascript" src="js/slide-show.js"></script>
+
+    <script type="text/javascript">  
+
+	var mygallery=new fadeSlideShow({   
+
+	 wrapperid: "imageslideshow2", //ID of blank DIV on page to house Slideshow   
+
+	 dimensions: [970, 320], //width/height of gallery in pixels. Should reflect dimensions of largest image (www.2createawebsites.com)
+
+	   imagearray:  [ <?php echo $banner; ?>],
+
+	  displaymode: {type:'auto', pause:1000, cycles:0, wraparound:false},   
+
+	  persist: false, //remember last viewed slide and recall within same session?   
+
+	  fadeduration: 4000, //transition duration (milliseconds)  
+
+	  descreveal: "ondemand",
+
+	  togglerid: ""
+
+	  });
+	  
+	  // Top header banner
+	  var mygallery=new fadeSlideShow({   
+
+	 wrapperid: "imageslideshow3", //ID of blank DIV on page to house Slideshow   
+
+	 dimensions: [750, 100], //width/height of gallery in pixels. Should reflect dimensions of largest image (www.2createawebsites.com)
+
+	   imagearray:  [ <?php echo $banner2; ?>],
+
+	  displaymode: {type:'auto', pause:1000, cycles:0, wraparound:false},   
+
+	  persist: false, //remember last viewed slide and recall within same session?   
+
+	  fadeduration: 4000, //transition duration (milliseconds)  
+
+	  descreveal: "ondemand",
+
+	  togglerid: ""
+
+	  })
+	  
+
+ </script>
+
+
+
+</body>
+
+
+
+</html>
+

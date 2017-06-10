@@ -1708,6 +1708,17 @@
 			UpdateRec('tblepayment', $Where, $arr);
 			echo "2";
 		break;
+
+		// Update User Tickets
+		case 'UpdateUserTickets':
+		$selected_ids = "";
+		if(isset($_POST['selected_id']))
+		{
+			$selected_ids = $_POST['selected_id'];
+			$selected_ids = implode(',', $selected_ids);
+		}
+			print_r($selected_ids); die;
+		break;
 		
 	}
 

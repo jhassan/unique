@@ -263,7 +263,7 @@
                   </div>
                   <?php } else { 
 										
-										TextField("Sales Report URL", "sales_report_url", $sales_report_url, "","6","form-control required");
+										TextField("Sales Report URL", "sales_report_url", $sales_report_url, "","6","form-control");
 
 											if($sales_report_status == '1')
 

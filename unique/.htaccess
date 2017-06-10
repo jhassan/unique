@@ -2,7 +2,8 @@ Options +FollowSymLinks
 
 RewriteEngine on
 
-
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 RewriteRule ^index$ index.php [L]
 
