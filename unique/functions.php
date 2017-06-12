@@ -1211,7 +1211,7 @@
 		// if we have not found this user
 		if(empty($rstRow["user_id"]))
 		{
-			header("Location: index?error=1");
+			header("Location: login_form?error=1");
 			exit;
 		}
 		else
