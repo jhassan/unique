@@ -38,9 +38,9 @@
 
     <!-- Custom Theme JavaScript -->
     <audio id="buzzer" src="audio/beep.mp3" type="audio/mp3">Your browser does not support the &#60;audio&#62; element.</audio>
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="../bower_components/js/sb-admin-2.min.js"></script>
 
-    <script src="../dist/js/jquery.validate.js"></script>
+    <script src="../bower_components/js/jquery.validate.js"></script>
 
     <script type="text/javascript">
 

@@ -123,6 +123,13 @@ function redirect($url) {
                                 <li>
                                     <a href="un_read_ticket">Un Read Ticket</a>
                                 </li>
+                                <?php if (in_array('67', $staff_permissions)) { ?>
+                                <li>
+
+                                    <a href="manage_ticket">Manage Tickets</a>
+
+                                </li>
+                                <?php } ?>
                             </ul>
 
                             <!-- /.nav-second-level -->
