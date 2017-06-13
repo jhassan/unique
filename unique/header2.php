@@ -29,7 +29,7 @@
     <div class="menu_block">
       <nav>
         <ul class="sf-menu">
-          <li class="current"><a href="home">Home</a></li>
+          <li class="current"><a href="/">Home</a></li>
           <li class="with_ul"><a href="#">About</a>
             <ul>
               <li><a href="company_history">Company History</a></li>

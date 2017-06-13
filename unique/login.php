@@ -1,8 +1,9 @@
 <?php
+	include_once("config.php");
 	session_start();
 	
-	$strNewLoginx = $_POST['strNewLoginx'];
-	$strNewPassword = $_POST['strNewPassword'];
+	$strNewLoginx = mysqli_real_escape_string($conn,$_POST['strNewLoginx']);
+	$strNewPassword = mysqli_real_escape_string($conn,$_POST['strNewPassword']);
 	// set login / password as session vars
 	$_SESSION["strLogin"] = $strNewLoginx;
 	$_SESSION["strPassword"] = md5($strNewPassword);
